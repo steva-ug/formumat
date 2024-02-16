@@ -38,7 +38,7 @@ actual fun LabelView(
             LabelStyle.TITLE -> MaterialTheme.typography.headlineMedium
             else -> MaterialTheme.typography.labelMedium
         },
-        modifier = modifier.padding(vertical = 8.dp)
+        modifier = modifier.padding(vertical = 4.dp)
     )
 }
 
