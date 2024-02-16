@@ -122,5 +122,16 @@ object Functions {
         }
     }
 
-    val ALL = listOf(Nz, ToStr, ToBool, ToInt, ToDouble, Len, Concat, Join, ListValues, EnumValue, OptionsLabel, Dispatch)
+    val Lookup = object : Function("Lookup", 1) {
+        override fun invoke(values: Map<String, Any?>, vararg args: Any?): Any? {
+            if (args.isNotEmpty()) {
+                return values[args[0].toString()]
+            } else {
+                return (values as? FormumatValues)?.data
+            }
+        }
+    }
+
+
+    val ALL = listOf(Nz, ToStr, ToBool, ToInt, ToDouble, Len, Concat, Join, ListValues, EnumValue, OptionsLabel, Dispatch, Lookup)
 }
