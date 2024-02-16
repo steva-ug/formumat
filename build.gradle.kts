@@ -56,6 +56,7 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${extra["kotlinx.serialization.json.version"]}")
                 implementation("org.reduxkotlin:redux-kotlin-threadsafe:${extra["redux.kotlin.threadsafe.version"]}")
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:${extra["kotlinx.datetime.version"]}")
+                implementation("co.touchlab:kermit:${extra["kermit.thelog.version"]}")
                 api("dev.icerock.moko:resources:${extra["moko.resources.version"]}")
                 api("dev.icerock.moko:resources-compose:${extra["moko.resources.version"]}")
                 if (localprops.getProperty("expressions.dir") != null) {

@@ -1,5 +1,6 @@
 package digital.steva.formumat.redux
 
+import co.touchlab.kermit.Logger
 import com.github.murzagalin.evaluator.DefaultFunctions
 import com.github.murzagalin.evaluator.Evaluator
 import digital.steva.formumat.FormumatConfig
@@ -63,7 +64,11 @@ data class FormumatValues(
 
             else -> data[key].orElse { types[key]?.default?.eval(this) }
         }
-        return if (value is List<*>) ListValue(value as List<Map<String, Any?>>, key) else value
+        val valOrListValue = if (value is List<*>) ListValue(value as List<Map<String, Any?>>, key) else value
+        if (valOrListValue == null) {
+            Logger.d { "Unable to find value with key \"${key}\"" }
+        }
+        return valOrListValue
     }
 
     override val keys: Set<String>
@@ -85,6 +90,7 @@ sealed class Boolish : Evaluatable {
         override fun eval(values: Map<String, Any>) = try {
             evaluator.evaluateBoolean(value, values)
         } catch (e: Throwable) {
+            Logger.d { "Unable to evaluate: ${e.message} in \"${value}\"" }
             false
         }
     }
@@ -135,6 +141,7 @@ sealed class Stringish : Evaluatable {
                 try {
                     evaluator.evaluateString(it.groups[1]?.value ?: "", values)
                 } catch (e: Throwable) {
+                    Logger.d { "Unable to evaluate: ${e.message} in \"${value}\"" }
                     ""
                 }
             }
@@ -187,6 +194,7 @@ sealed class Intish : Evaluatable {
         override fun eval(values: Map<String, Any>) = try {
             evaluator.evaluateDouble(value, values).toInt()
         } catch (e: Throwable) {
+            Logger.d { "Unable to evaluate: ${e.message} in \"${value}\"" }
             0
         }
     }
@@ -232,6 +240,7 @@ sealed class Numberish : Evaluatable {
         override fun eval(values: Map<String, Any>) = try {
             evaluator.evaluateDouble(value, values)
         } catch (e: Throwable) {
+            Logger.d { "Unable to evaluate: ${e.message} in \"${value}\"" }
             0.0
         }
     }
