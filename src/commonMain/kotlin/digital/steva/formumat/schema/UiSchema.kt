@@ -163,7 +163,7 @@ data class DropdownField(
     override val enabled: Boolish = Boolish.Literal(true),
     override val required: Boolish = Boolish.Literal(false),
     override val clearable: Boolish = Boolish.Literal(true),
-    override val enumLabels: Map<String, String>,
+    override val enumLabels: Map<String, String> = emptyMap(),
     val emptyOption: Boolish = Boolish.Literal(true),
 ) : OptionsField(title, property, name, visible, enabled, required, clearable, enumLabels)
 
