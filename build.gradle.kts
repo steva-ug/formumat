@@ -49,21 +49,19 @@ kotlin {
 
     sourceSets {
         val commonMain by getting {
-            val mokoResourcesVersion = extra["moko.resources.version"] as String
-
             dependencies {
                 implementation(compose.runtime)
                 implementation(compose.ui)
-                implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.6")
-                implementation("org.reduxkotlin:redux-kotlin-threadsafe:0.6.1")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
-                implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
-                api("dev.icerock.moko:resources:${mokoResourcesVersion}")
-                api("dev.icerock.moko:resources-compose:${mokoResourcesVersion}")
+                implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:${extra["kotlinx.collections.immutable.version"]}")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${extra["kotlinx.serialization.json.version"]}")
+                implementation("org.reduxkotlin:redux-kotlin-threadsafe:${extra["redux.kotlin.threadsafe.version"]}")
+                implementation("org.jetbrains.kotlinx:kotlinx-datetime:${extra["kotlinx.datetime.version"]}")
+                api("dev.icerock.moko:resources:${extra["moko.resources.version"]}")
+                api("dev.icerock.moko:resources-compose:${extra["moko.resources.version"]}")
                 if (localprops.getProperty("expressions.dir") != null) {
                     implementation(project(":expressions"))
                 } else {
-                    implementation("io.github.murzagalin:multiplatform-expressions-evaluator:0.15.0")
+                    implementation("digital.steva:multiplatform-expressions-evaluator:${extra["multiplatform.expressions.evaluator.version"]}")
                 }
             }
         }

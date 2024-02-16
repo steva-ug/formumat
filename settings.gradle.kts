@@ -9,20 +9,17 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
             if (requested.id.namespace == "com.android" || requested.id.name == "kotlin-android-extensions") {
-                useModule("com.android.tools.build:gradle:8.1.2")
+                useModule("com.android.tools.build:gradle:${extra["agp.version"]}")
             }
         }
     }
 
     plugins {
-        val kotlinVersion = extra["kotlin.version"] as String
-        val composeVersion = extra["compose.version"] as String
-        val mokoResourcesVersion = extra["moko.resources.version"] as String
-        kotlin("jvm").version(kotlinVersion)
-        kotlin("multiplatform").version(kotlinVersion)
-        kotlin("plugin.serialization").version(kotlinVersion)
-        id("org.jetbrains.compose").version(composeVersion)
-        id("dev.icerock.mobile.multiplatform-resources").version(mokoResourcesVersion)
+        kotlin("jvm").version(extra["kotlin.version"] as String)
+        kotlin("multiplatform").version(extra["kotlin.version"] as String)
+        kotlin("plugin.serialization").version(extra["kotlin.version"] as String)
+        id("org.jetbrains.compose").version(extra["compose.version"] as String)
+        id("dev.icerock.mobile.multiplatform-resources").version(extra["moko.resources.version"] as String)
     }
 }
 
