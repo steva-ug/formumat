@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<resources>
-    <string name="action_ok">OK</string>
-    <string name="action_cancel">Abbrechen</string>
-    <string name="title_select_time">Uhrzeit wählen</string>
-    <string name="error_no_integer_number">Bitte geben sie eine Ganzzahl ein.</string>
-    <string name="error_no_floating_point_number">Bitte geben sie eine Fließkommazahl ein.</string>
-</resources>
