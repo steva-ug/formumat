@@ -27,7 +27,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import digital.steva.formumat.FormumatConfig
 import digital.steva.formumat.redux.Dispatcher
 import digital.steva.formumat.redux.FormumatState
@@ -221,7 +220,7 @@ fun PageTitle(title: Stringish?, values: FormumatValues) {
         Column(modifier = Modifier.padding(bottom = 12.dp)) {
             Text(
                 text = title.eval(values),
-                fontSize = 24.sp
+                style = MaterialTheme.typography.headlineLarge
             )
             Divider()
         }
@@ -279,7 +278,7 @@ fun SectionHeader(
             content = {
                 Text(
                     text = title,
-                    fontSize = 18.sp,
+                    style = MaterialTheme.typography.headlineMedium,
                     modifier = Modifier.padding(8.dp),
                     color = if (enabled) Color.Unspecified else Color.LightGray
                 )
