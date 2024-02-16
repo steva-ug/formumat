@@ -39,7 +39,7 @@ object Functions {
         }
     }
 
-    val ToNum = object : Function("ToNum", 1) {
+    val ToDouble = object : Function("ToDouble", 1) {
         override fun invoke(values: Map<String, Any?>, vararg args: Any?): Any? {
             require(args.size == 1) { "$name should be called with exactly 1 argument" }
             return Convert.toDouble(args[0])
@@ -115,5 +115,5 @@ object Functions {
         }
     }
 
-    val ALL = listOf(Nz, ToStr, ToBool, ToInt, ToNum, Len, Join, ListValues, EnumValue, OptionsLabel, Dispatch)
+    val ALL = listOf(Nz, ToStr, ToBool, ToInt, ToDouble, Len, Join, ListValues, EnumValue, OptionsLabel, Dispatch)
 }
