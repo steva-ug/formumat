@@ -25,15 +25,15 @@ import digital.steva.formumat.schema.TextField
 
 @Composable
 actual fun LabelView(
-    textField: LabelField,
+    labelField: LabelField,
     values: FormumatValues,
     dispatch: Dispatcher,
     enabled: Boolean,
     modifier: Modifier
 ) {
     Text(
-        text = textField.title.eval(values),
-        fontSize = when (textField.style) {
+        text = labelField.title.eval(values),
+        fontSize = when (labelField.style) {
             LabelStyle.HEADING -> 24.sp
             LabelStyle.TITLE -> 20.sp
             else -> 14.sp

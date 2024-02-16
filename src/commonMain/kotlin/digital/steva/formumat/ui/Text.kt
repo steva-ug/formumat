@@ -10,7 +10,7 @@ import digital.steva.formumat.schema.TextField
 
 @Composable
 expect fun LabelView(
-    textField: LabelField,
+    labelField: LabelField,
     values: FormumatValues,
     dispatch: Dispatcher,
     enabled: Boolean = true,
