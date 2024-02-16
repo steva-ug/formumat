@@ -62,7 +62,7 @@ actual fun DateTimeView(
     modifier: Modifier
 ) {
     val label = dateTimeField.title.eval(values)
-    val value = values[dateTimeField.property]
+    val value = values[dateTimeField.property?.eval(values)]
     val date = when (type?.format) {
         StringFormat.DATE_TIME -> value?.let { LocalDateTime.parse(it.toString()).date }
         StringFormat.DATE -> value?.let { LocalDate.parse(it.toString()) }
@@ -96,7 +96,7 @@ actual fun DateTimeView(
                         StringFormat.DATE -> it.toString()
                         else -> null
                     }
-                    dispatch(SetValue(dateTimeField.property ?: "", newValue, values.listContext))
+                    dispatch(SetValue(dateTimeField.property?.eval(values) ?: "", newValue, values.listContext))
                 }
             }
             if (type?.format == StringFormat.DATE_TIME || type?.format == StringFormat.TIME) {
@@ -108,7 +108,7 @@ actual fun DateTimeView(
                         StringFormat.TIME -> it.toString()
                         else -> null
                     }
-                    dispatch(SetValue(dateTimeField.property ?: "", newValue, values.listContext))
+                    dispatch(SetValue(dateTimeField.property?.eval(values) ?: "", newValue, values.listContext))
                 }
             }
             if (dateTimeField.clearable.eval(values)) {
@@ -126,7 +126,7 @@ actual fun DateTimeView(
                                 style = Stroke(width = 2.dp.toPx())
                             )
                         }
-                        .clickable { dispatch(ClearValue(dateTimeField.property ?: "", values.listContext)) }
+                        .clickable { dispatch(ClearValue(dateTimeField.property?.eval(values) ?: "", values.listContext)) }
                 )
             }
         }

@@ -93,7 +93,7 @@ object Functions {
             val optionsField = formumatValues.fields[Convert.toString(args[0])] as? OptionsField
             val value = Convert.toInt(args[1])
             return optionsField?.let { field ->
-                val enums = (formumatValues.getType(field.property ?: "") as? EnumerableType)?.enum ?: emptyList()
+                val enums = (formumatValues.getType(field.property?.eval(values) ?: "") as? EnumerableType)?.enum ?: emptyList()
                 val enum = if (value > 0 && value <= enums.size) enums[value - 1].toString() else ""
                 field.enumLabels[enum] ?: ""
             } ?: ""

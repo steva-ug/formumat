@@ -239,9 +239,9 @@ fun FieldView(
     if (field.visible.eval(values)) {
         val listContext = values.listContext
         val type = if (listContext != null)
-            (types[listContext.listProperty] as ArrayType).items.properties[field.property]
+            (types[listContext.listProperty] as ArrayType).items.properties[field.property?.eval(values)]
         else
-            types[field.property]
+            types[field.property?.eval(values)]
 
         when (field) {
             is LabelField -> LabelView(field, values, dispatch, enabled, modifier)

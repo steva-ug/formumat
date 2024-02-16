@@ -44,7 +44,7 @@ actual fun ListView(
     enabled: Boolean,
     modifier: Modifier
 ) {
-    val listProperty = listField.property ?: ""
+    val listProperty = listField.property?.eval(values) ?: ""
     Column(
         modifier.border(
             2.dp,

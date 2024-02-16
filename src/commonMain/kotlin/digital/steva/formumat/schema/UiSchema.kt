@@ -26,7 +26,7 @@ data class UiSchema(
 @Polymorphic
 interface Field {
     val title: Stringish
-    val property: String?
+    val property: Stringish?
     val name: String?
     val visible: Boolish
     val enabled: Boolish
@@ -53,7 +53,7 @@ enum class LabelStyle {
 @SerialName("label")
 data class LabelField(
     override val title: Stringish = Stringish.Literal(""),
-    override val property: String? = null,
+    override val property: Stringish? = null,
     override val name: String? = null,
     override val visible: Boolish = Boolish.Literal(true),
     override val enabled: Boolish = Boolish.Literal(true),
@@ -66,7 +66,7 @@ data class LabelField(
 @SerialName("text")
 data class TextField(
     override val title: Stringish = Stringish.Literal(""),
-    override val property: String? = null,
+    override val property: Stringish? = null,
     override val name: String? = null,
     override val visible: Boolish = Boolish.Literal(true),
     override val enabled: Boolish = Boolish.Literal(true),
@@ -79,23 +79,23 @@ data class TextField(
     }
 
     override fun isMissingRequired(type: Type?, values: Map<String, Any>): Boolean {
-        val value = values[property] as? String
+        val value = values[property?.eval(values)] as? String
         return isRequired(type, values)
                 && (value.isNullOrBlank() || Stringish.Expression(value).eval(values).isBlank())
     }
 
     override fun countRequired(types: Map<String, Type>, values: Map<String, Any>) =
-        if (isRequired(types[property], values)) 1 else 0
+        if (isRequired(types[property?.eval(values)], values)) 1 else 0
 
     override fun countMissingRequired(types: Map<String, Type>, values: Map<String, Any>) =
-        if (isMissingRequired(types[property], values)) 1 else 0
+        if (isMissingRequired(types[property?.eval(values)], values)) 1 else 0
 }
 
 @Polymorphic
 @Serializable
 abstract class ToggleField(
     @Transient override val title: Stringish = Stringish.Literal(""),
-    @Transient override val property: String? = null,
+    @Transient override val property: Stringish? = null,
     @Transient override val name: String? = null,
     @Transient override val visible: Boolish = Boolish.Literal(true),
     @Transient override val enabled: Boolish = Boolish.Literal(true),
@@ -107,7 +107,7 @@ abstract class ToggleField(
 @SerialName("checkbox")
 data class CheckboxField(
     override val title: Stringish = Stringish.Literal(""),
-    override val property: String? = null,
+    override val property: Stringish? = null,
     override val name: String? = null,
     override val visible: Boolish = Boolish.Literal(true),
     override val enabled: Boolish = Boolish.Literal(true),
@@ -119,7 +119,7 @@ data class CheckboxField(
 @SerialName("switch")
 data class SwitchField(
     override val title: Stringish = Stringish.Literal(""),
-    override val property: String? = null,
+    override val property: Stringish? = null,
     override val name: String? = null,
     override val visible: Boolish = Boolish.Literal(true),
     override val enabled: Boolish = Boolish.Literal(true),
@@ -131,7 +131,7 @@ data class SwitchField(
 @Serializable
 abstract class OptionsField(
     @Transient override val title: Stringish = Stringish.Literal(""),
-    @Transient override val property: String? = null,
+    @Transient override val property: Stringish? = null,
     @Transient override val name: String? = null,
     @Transient override val visible: Boolish = Boolish.Literal(true),
     @Transient override val enabled: Boolish = Boolish.Literal(true),
@@ -144,7 +144,7 @@ abstract class OptionsField(
 @SerialName("radios")
 data class RadiosField(
     override val title: Stringish = Stringish.Literal(""),
-    override val property: String? = null,
+    override val property: Stringish? = null,
     override val name: String? = null,
     override val visible: Boolish = Boolish.Literal(true),
     override val enabled: Boolish = Boolish.Literal(true),
@@ -157,7 +157,7 @@ data class RadiosField(
 @SerialName("dropdown")
 data class DropdownField(
     override val title: Stringish = Stringish.Literal(""),
-    override val property: String? = null,
+    override val property: Stringish? = null,
     override val name: String? = null,
     override val visible: Boolish = Boolish.Literal(true),
     override val enabled: Boolish = Boolish.Literal(true),
@@ -171,7 +171,7 @@ data class DropdownField(
 @SerialName("datetime")
 data class DateTimeField(
     override val title: Stringish = Stringish.Literal(""),
-    override val property: String? = null,
+    override val property: Stringish? = null,
     override val name: String? = null,
     override val visible: Boolish = Boolish.Literal(true),
     override val enabled: Boolish = Boolish.Literal(true),
@@ -183,7 +183,7 @@ data class DateTimeField(
 @SerialName("integer")
 data class IntegerField(
     override val title: Stringish = Stringish.Literal(""),
-    override val property: String? = null,
+    override val property: Stringish? = null,
     override val name: String? = null,
     override val visible: Boolish = Boolish.Literal(true),
     override val enabled: Boolish = Boolish.Literal(true),
@@ -203,7 +203,7 @@ enum class NumberFormat(val serialName: String) {
 @SerialName("number")
 data class NumberField(
     override val title: Stringish = Stringish.Literal(""),
-    override val property: String? = null,
+    override val property: Stringish? = null,
     override val name: String? = null,
     override val visible: Boolish = Boolish.Literal(true),
     override val enabled: Boolish = Boolish.Literal(true),
@@ -216,7 +216,7 @@ data class NumberField(
 @SerialName("slider")
 data class SliderField(
     override val title: Stringish = Stringish.Literal(""),
-    override val property: String? = null,
+    override val property: Stringish? = null,
     override val name: String? = null,
     override val visible: Boolish = Boolish.Literal(true),
     override val enabled: Boolish = Boolish.Literal(true),
@@ -230,7 +230,7 @@ data class SliderField(
 @SerialName("button")
 data class ButtonField(
     override val title: Stringish = Stringish.Literal(""),
-    override val property: String? = null,
+    override val property: Stringish? = null,
     override val name: String? = null,
     override val visible: Boolish = Boolish.Literal(true),
     override val enabled: Boolish = Boolish.Literal(true),
@@ -244,7 +244,7 @@ data class ButtonField(
 @SerialName("page")
 data class Page(
     override val title: Stringish = Stringish.Literal(""),
-    override val property: String? = null,
+    override val property: Stringish? = null,
     override val name: String? = null,
     override val visible: Boolish = Boolish.Literal(true),
     override val enabled: Boolish = Boolish.Literal(true),
@@ -264,7 +264,7 @@ data class Page(
 @SerialName("section")
 data class Section(
     override val title: Stringish = Stringish.Literal(""),
-    override val property: String? = null,
+    override val property: Stringish? = null,
     override val name: String? = null,
     override val visible: Boolish = Boolish.Literal(true),
     override val enabled: Boolish = Boolish.Literal(true),
@@ -285,7 +285,7 @@ data class Section(
 @SerialName("row")
 data class RowField(
     override val title: Stringish = Stringish.Literal(""),
-    override val property: String? = null,
+    override val property: Stringish? = null,
     override val name: String? = null,
     override val visible: Boolish = Boolish.Literal(true),
     override val enabled: Boolish = Boolish.Literal(true),
@@ -298,7 +298,7 @@ data class RowField(
 @SerialName("list")
 data class ListField(
     override val title: Stringish = Stringish.Literal(""),
-    override val property: String? = null,
+    override val property: Stringish? = null,
     override val name: String? = null,
     override val visible: Boolish = Boolish.Literal(true),
     override val enabled: Boolish = Boolish.Literal(true),

@@ -46,7 +46,7 @@ actual fun CheckboxView(
     enabled: Boolean,
     modifier: Modifier
 ) {
-    val checked = (values[checkboxField.property] ?: false) as Boolean
+    val checked = (values[checkboxField.property?.eval(values)] ?: false) as Boolean
     val label = checkboxField.title.eval(values)
 
     Row(
@@ -57,7 +57,7 @@ actual fun CheckboxView(
                 onClick = {
                     dispatch(
                         SetValue(
-                            checkboxField.property ?: "",
+                            checkboxField.property?.eval(values) ?: "",
                             !checked,
                             values.listContext
                         )
@@ -86,7 +86,7 @@ actual fun SwitchView(
     enabled: Boolean,
     modifier: Modifier
 ) {
-    val checked = (values[switchField.property] ?: false) as Boolean
+    val checked = (values[switchField.property?.eval(values)] ?: false) as Boolean
     val label = switchField.title.eval(values)
 
     Row(
@@ -97,7 +97,7 @@ actual fun SwitchView(
                 onClick = {
                     dispatch(
                         SetValue(
-                            switchField.property ?: "",
+                            switchField.property?.eval(values) ?: "",
                             !checked,
                             values.listContext
                         )
@@ -126,8 +126,8 @@ actual fun RadiosView(
     enabled: Boolean,
     modifier: Modifier
 ) {
-    val value = values[radiosField.property]
-    val valueKey = radiosField.property ?: ""
+    val value = values[radiosField.property?.eval(values)]
+    val valueKey = radiosField.property?.eval(values) ?: ""
     val label = radiosField.title.eval(values)
     val options = enumerableType?.enum
     val optionLabels = radiosField.enumLabels
@@ -177,11 +177,11 @@ actual fun DropdownView(
     enabled: Boolean,
     modifier: Modifier
 ) {
-    val valueKey = dropdownField.property ?: ""
+    val valueKey = dropdownField.property?.eval(values) ?: ""
     val label = dropdownField.title.eval(values)
     val options = enumerableType?.enum
     val optionLabels = dropdownField.enumLabels
-    val value = values[dropdownField.property]?.let {
+    val value = values[dropdownField.property?.eval(values)]?.let {
         when {
             it != "" && it != 0 && it != 0.0 -> Convert.toString(it).let { index -> optionLabels[index] ?: index }
             else -> null

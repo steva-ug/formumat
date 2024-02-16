@@ -29,7 +29,7 @@ actual fun IntegerView(
     enabled: Boolean,
     modifier: Modifier
 ) {
-    val property = integerField.property ?: ""
+    val property = integerField.property?.eval(values) ?: ""
     val label = integerField.title.eval(values)
     val fieldEnabled = enabled && integerField.enabled.eval(values)
     var text = Convert.toString(values[property])
@@ -68,7 +68,7 @@ actual fun SliderView(
     enabled: Boolean,
     modifier: Modifier
 ) {
-    val value = values[sliderField.property]
+    val value = values[sliderField.property?.eval(values)]
     val label = sliderField.title.eval(values)
     val fieldEnabled = enabled && sliderField.enabled.eval(values)
 
@@ -87,7 +87,7 @@ actual fun SliderView(
             onValueChange = {
                 dispatch(
                     SetValue(
-                        sliderField.property ?: "",
+                        sliderField.property?.eval(values) ?: "",
                         it.toInt(),
                         values.listContext
                     )
@@ -108,7 +108,7 @@ actual fun NumberView(
     enabled: Boolean,
     modifier: Modifier
 ) {
-    val property = numberField.property ?: ""
+    val property = numberField.property?.eval(values) ?: ""
     val label = numberField.title.eval(values)
     val fieldEnabled = enabled && numberField.enabled.eval(values)
     var text = Convert.toString(values[property])

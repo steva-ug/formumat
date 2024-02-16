@@ -16,7 +16,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import digital.steva.formumat.redux.Dispatcher
 import digital.steva.formumat.redux.FormumatValues
-import digital.steva.formumat.redux.ListContext
 import digital.steva.formumat.redux.SetValue
 import digital.steva.formumat.schema.LabelField
 import digital.steva.formumat.schema.LabelStyle
@@ -51,21 +50,21 @@ actual fun TextView(
     enabled: Boolean,
     modifier: Modifier
 ) {
-    val value = (values[textField.property] ?: "").toString()
+    val value = (values[textField.property?.eval(values)] ?: "").toString()
     val label = textField.title.eval(values)
     val fieldEnabled = enabled && textField.enabled.eval(values)
     val required = textField.isRequired(stringType, values)
     if (textField.multiline) {
-        TextAreaView(textField, values.listContext, value, label, fieldEnabled, required, dispatch, modifier)
+        TextAreaView(textField, values, value, label, fieldEnabled, required, dispatch, modifier)
     } else {
-        TextFieldView(textField, values.listContext, value, label, fieldEnabled, required, dispatch, modifier)
+        TextFieldView(textField, values, value, label, fieldEnabled, required, dispatch, modifier)
     }
 }
 
 @Composable
 fun TextFieldView(
     textField: TextField,
-    listContext: ListContext?,
+    values: FormumatValues,
     value: String,
     label: String,
     enabled: Boolean,
@@ -75,7 +74,7 @@ fun TextFieldView(
 ) {
     OutlinedTextField(
         value = value,
-        onValueChange = { dispatch(SetValue(textField.property ?: "", it, listContext)) },
+        onValueChange = { dispatch(SetValue(textField.property?.eval(values) ?: "", it, values.listContext)) },
         label = { Text(label) },
         singleLine = true,
         enabled = enabled,
@@ -87,7 +86,7 @@ fun TextFieldView(
 @Composable
 fun TextAreaView(
     textField: TextField,
-    listContext: ListContext?,
+    values: FormumatValues,
     value: String,
     label: String,
     enabled: Boolean,
@@ -97,7 +96,7 @@ fun TextAreaView(
 ) {
     OutlinedTextField(
         value = value,
-        onValueChange = { dispatch(SetValue(textField.property ?: "", it, listContext)) },
+        onValueChange = { dispatch(SetValue(textField.property?.eval(values) ?: "", it, values.listContext)) },
         label = { Text(label) },
         singleLine = false,
         minLines = 5,
