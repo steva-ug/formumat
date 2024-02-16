@@ -36,23 +36,6 @@ interface Type {
     fun convertToType(value: Any?): Any = Unit
 }
 
-enum class StringFormat {
-    @SerialName("date")
-    DATE,
-
-    @SerialName("time")
-    TIME,
-
-    @SerialName("date-time")
-    DATE_TIME,
-
-    @SerialName("password")
-    PASSWORD,
-
-    @SerialName("email")
-    EMAIL,
-}
-
 @Serializable
 @SerialName("object")
 data class ObjectType(
@@ -86,10 +69,52 @@ interface EnumerableType : Type {
     fun getValue(index: Any?): Any? = enum?.indexOf(index)?.let { enumValues?.get(it) }
 }
 
+enum class StringFormat {
+    @SerialName("date")
+    DATE,
+
+    @SerialName("time")
+    TIME,
+
+    @SerialName("date-time")
+    DATE_TIME,
+
+    @SerialName("password")
+    PASSWORD,
+
+    @SerialName("email")
+    EMAIL,
+}
+
+enum class StringEncoding {
+    @SerialName("7bit")
+    SEVEN_BIT,
+
+    @SerialName("8bit")
+    EIGHT_BIT,
+
+    @SerialName("binary")
+    BINARY,
+
+    @SerialName("quoted-printable")
+    QUOTED_PRINTABLE,
+
+    @SerialName("base16")
+    BASE_16,
+
+    @SerialName("base32")
+    BASE_32,
+
+    @SerialName("base64")
+    BASE_64,
+}
+
 @Serializable
 @SerialName("string")
 data class StringType(
     val format: StringFormat? = null,
+    val contentEncoding: StringEncoding? = null,
+    val contentMediaType: String? = null,
     override val enum: List<String>? = null,
     override val enumValues: List<Int>? = null,
     override val default: Stringish? = null,
