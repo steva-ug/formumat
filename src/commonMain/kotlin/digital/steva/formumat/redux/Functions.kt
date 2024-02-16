@@ -54,6 +54,13 @@ object Functions {
         }
     }
 
+    val Concat = object : Function("Concat", 1..Int.MAX_VALUE) {
+        override fun invoke(values: Map<String, Any?>, vararg args: Any?): Any? {
+            require(args.isNotEmpty()) { "$name should be called with at least 1 argument" }
+            return args.filterNotNull().joinToString("")
+        }
+    }
+
     val Join = object : Function("Join", 1..Int.MAX_VALUE) {
         override fun invoke(values: Map<String, Any?>, vararg args: Any?): Any? {
             require(args.isNotEmpty()) { "$name should be called with at least 1 argument" }
@@ -115,5 +122,5 @@ object Functions {
         }
     }
 
-    val ALL = listOf(Nz, ToStr, ToBool, ToInt, ToDouble, Len, Join, ListValues, EnumValue, OptionsLabel, Dispatch)
+    val ALL = listOf(Nz, ToStr, ToBool, ToInt, ToDouble, Len, Concat, Join, ListValues, EnumValue, OptionsLabel, Dispatch)
 }
