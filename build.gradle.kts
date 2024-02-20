@@ -52,6 +52,9 @@ kotlin {
             dependencies {
                 implementation(compose.runtime)
                 implementation(compose.ui)
+                implementation(compose.foundation)
+                implementation(compose.material3)
+                implementation(compose.materialIconsExtended)
                 implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:${extra["kotlinx.collections.immutable.version"]}")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${extra["kotlinx.serialization.json.version"]}")
                 implementation("org.reduxkotlin:redux-kotlin-threadsafe:${extra["redux.kotlin.threadsafe.version"]}")
@@ -71,23 +74,13 @@ kotlin {
                 implementation(kotlin("test"))
             }
         }
-        val commonUi by creating {
-            dependsOn(commonMain)
-            dependencies {
-                implementation(compose.foundation)
-                implementation(compose.material3)
-                implementation(compose.materialIconsExtended)
-            }
-        }
         val jvmMain by getting {
-            dependsOn(commonUi)
             dependencies {
             }
         }
         val jvmTest by getting
         val jsMain by getting {
             // 1. option: Use the common UI which will be rendered into a canvas
-            dependsOn(commonUi)
             // 1. option
             dependencies {
                 // 2. option: User HTML DOM elements
@@ -98,7 +91,6 @@ kotlin {
         val jsTest by getting {
         }
         val androidMain by getting {
-            dependsOn(commonUi)
             dependencies {
             }
         }
@@ -107,7 +99,6 @@ kotlin {
             }
         }
         val iosMain by getting {
-            dependsOn(commonUi)
             dependencies {
             }
         }
