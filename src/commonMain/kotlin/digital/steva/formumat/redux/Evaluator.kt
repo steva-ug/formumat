@@ -17,14 +17,7 @@ import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
 import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
-import kotlinx.serialization.json.JsonElement
-import kotlinx.serialization.json.JsonPrimitive
-import kotlinx.serialization.json.boolean
-import kotlinx.serialization.json.booleanOrNull
-import kotlinx.serialization.json.double
-import kotlinx.serialization.json.doubleOrNull
-import kotlinx.serialization.json.int
-import kotlinx.serialization.json.intOrNull
+import kotlinx.serialization.json.*
 
 val evaluator by lazy {
     Evaluator(
@@ -47,6 +40,11 @@ data class FormumatValues(
     val listContext: ListContext? = null
 ) : MapDecorator<String, Any> {
 
+    class Entry(override val key: String, override val value: Any) : Map.Entry<String, Any>
+
+    override val entries: Set<Map.Entry<String, Any>>
+        get() = types.keys.filter { key -> get(key) != null }.map { key -> Entry(key, get(key)!!) }.toSet()
+
     fun absoluteKey(key: String) = when {
         listContext != null -> "${listContext.listProperty}.$key"
         else -> key
@@ -58,7 +56,8 @@ data class FormumatValues(
     override fun get(key: String): Any? {
         val value = when {
             listContext != null -> {
-                val value = (data[listContext.listProperty] as? List<Map<String, Any>>)?.get(listContext.listIndex)?.get(key)
+                val value =
+                    (data[listContext.listProperty] as? List<Map<String, Any>>)?.get(listContext.listIndex)?.get(key)
                 value ?: getType(key)?.default?.eval(this)
             }
 
