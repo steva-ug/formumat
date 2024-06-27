@@ -40,3 +40,8 @@ val localprops = java.util.Properties().apply {
     } catch (ignored: Throwable) {
     }
 }
+
+if (localprops.containsKey("expressions.dir")) {
+    include("expressions")
+    project(":expressions").projectDir = File(localprops.getProperty("expressions.dir"))
+}
