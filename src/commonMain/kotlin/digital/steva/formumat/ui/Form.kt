@@ -14,6 +14,7 @@ import androidx.compose.material3.Badge
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.Surface
@@ -94,8 +95,8 @@ fun Progress(
     Box(contentAlignment = Alignment.Center) {
         CircularProgressIndicator(
             color = MaterialTheme.colorScheme.primary,
-            progress = progress,
-            trackColor = Color.LightGray
+            trackColor = Color.LightGray,
+            progress = { progress }
         )
         Text(text = "${(progress * 100).toInt()}")
     }
@@ -222,7 +223,7 @@ fun PageTitle(title: Stringish?, values: FormumatValues) {
                 text = title.eval(values),
                 style = MaterialTheme.typography.headlineLarge
             )
-            Divider()
+            HorizontalDivider()
         }
     }
 }
@@ -287,6 +288,7 @@ fun SectionHeader(
     }
 }
 
+@Suppress("UNUSED_PARAMETER")
 @Composable
 fun RowView(
     rowField: RowField,

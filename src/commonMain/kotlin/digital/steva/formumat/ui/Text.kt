@@ -22,6 +22,7 @@ import digital.steva.formumat.schema.LabelStyle
 import digital.steva.formumat.schema.StringType
 import digital.steva.formumat.schema.TextField
 
+@Suppress("UNUSED_PARAMETER")
 @Composable
 fun LabelView(
     labelField: LabelField,

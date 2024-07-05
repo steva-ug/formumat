@@ -37,6 +37,7 @@ import digital.steva.formumat.schema.EnumerableType
 import digital.steva.formumat.schema.RadiosField
 import digital.steva.formumat.schema.SwitchField
 
+@Suppress("UNUSED_PARAMETER")
 @Composable
 fun CheckboxView(
     checkboxField: CheckboxField,
@@ -77,6 +78,7 @@ fun CheckboxView(
     }
 }
 
+@Suppress("UNUSED_PARAMETER")
 @Composable
 fun SwitchView(
     switchField: SwitchField,
@@ -117,6 +119,7 @@ fun SwitchView(
     }
 }
 
+@Suppress("UNUSED_PARAMETER")
 @Composable
 fun RadiosView(
     radiosField: RadiosField,
@@ -167,6 +170,7 @@ fun RadiosView(
     }
 }
 
+@Suppress("UNUSED_PARAMETER")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DropdownView(

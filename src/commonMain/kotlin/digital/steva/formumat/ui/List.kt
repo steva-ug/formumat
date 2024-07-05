@@ -33,7 +33,7 @@ import digital.steva.formumat.schema.ArrayType
 import digital.steva.formumat.schema.ListField
 import digital.steva.formumat.schema.Type
 
-@Suppress("UNUSED_ANONYMOUS_PARAMETER")
+@Suppress("UNUSED_ANONYMOUS_PARAMETER", "UNUSED_PARAMETER")
 @Composable
 fun ListView(
     listField: ListField,

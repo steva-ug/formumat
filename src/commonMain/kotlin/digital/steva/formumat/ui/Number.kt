@@ -20,6 +20,7 @@ import digital.steva.formumat.schema.NumberField
 import digital.steva.formumat.schema.NumberType
 import digital.steva.formumat.schema.SliderField
 
+@Suppress("UNUSED_PARAMETER")
 @Composable
 fun IntegerView(
     integerField: IntegerField,
@@ -59,6 +60,7 @@ fun IntegerView(
     )
 }
 
+@Suppress("UNUSED_PARAMETER")
 @Composable
 fun SliderView(
     sliderField: SliderField,
@@ -99,6 +101,7 @@ fun SliderView(
     }
 }
 
+@Suppress("UNUSED_PARAMETER")
 @Composable
 fun NumberView(
     numberField: NumberField,

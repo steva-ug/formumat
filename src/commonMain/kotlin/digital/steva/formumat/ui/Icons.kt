@@ -1,6 +1,143 @@
 package digital.steva.formumat.ui
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.Accessible
+import androidx.compose.material.icons.automirrored.filled.AccessibleForward
+import androidx.compose.material.icons.automirrored.filled.AddToHomeScreen
+import androidx.compose.material.icons.automirrored.filled.AirplaneTicket
+import androidx.compose.material.icons.automirrored.filled.AlignHorizontalLeft
+import androidx.compose.material.icons.automirrored.filled.AlignHorizontalRight
+import androidx.compose.material.icons.automirrored.filled.AltRoute
+import androidx.compose.material.icons.automirrored.filled.Announcement
+import androidx.compose.material.icons.automirrored.filled.ArrowBackIos
+import androidx.compose.material.icons.automirrored.filled.ArrowForwardIos
+import androidx.compose.material.icons.automirrored.filled.ArrowLeft
+import androidx.compose.material.icons.automirrored.filled.ArrowRight
+import androidx.compose.material.icons.automirrored.filled.ArrowRightAlt
+import androidx.compose.material.icons.automirrored.filled.Article
+import androidx.compose.material.icons.automirrored.filled.Assignment
+import androidx.compose.material.icons.automirrored.filled.AssignmentReturn
+import androidx.compose.material.icons.automirrored.filled.AssistantDirection
+import androidx.compose.material.icons.automirrored.filled.Backspace
+import androidx.compose.material.icons.automirrored.filled.BatteryUnknown
+import androidx.compose.material.icons.automirrored.filled.BluetoothSearching
+import androidx.compose.material.icons.automirrored.filled.BrandingWatermark
+import androidx.compose.material.icons.automirrored.filled.CallMade
+import androidx.compose.material.icons.automirrored.filled.CallMerge
+import androidx.compose.material.icons.automirrored.filled.CallMissed
+import androidx.compose.material.icons.automirrored.filled.CallMissedOutgoing
+import androidx.compose.material.icons.automirrored.filled.CallReceived
+import androidx.compose.material.icons.automirrored.filled.CallSplit
+import androidx.compose.material.icons.automirrored.filled.Chat
+import androidx.compose.material.icons.automirrored.filled.ChromeReaderMode
+import androidx.compose.material.icons.automirrored.filled.Comment
+import androidx.compose.material.icons.automirrored.filled.CompareArrows
+import androidx.compose.material.icons.automirrored.filled.ContactSupport
+import androidx.compose.material.icons.automirrored.filled.DirectionsBike
+import androidx.compose.material.icons.automirrored.filled.DirectionsRun
+import androidx.compose.material.icons.automirrored.filled.DirectionsWalk
+import androidx.compose.material.icons.automirrored.filled.DriveFileMove
+import androidx.compose.material.icons.automirrored.filled.Dvr
+import androidx.compose.material.icons.automirrored.filled.EventNote
+import androidx.compose.material.icons.automirrored.filled.FactCheck
+import androidx.compose.material.icons.automirrored.filled.FeaturedPlayList
+import androidx.compose.material.icons.automirrored.filled.FeaturedVideo
+import androidx.compose.material.icons.automirrored.filled.Feed
+import androidx.compose.material.icons.automirrored.filled.FollowTheSigns
+import androidx.compose.material.icons.automirrored.filled.FormatAlignLeft
+import androidx.compose.material.icons.automirrored.filled.FormatAlignRight
+import androidx.compose.material.icons.automirrored.filled.FormatIndentDecrease
+import androidx.compose.material.icons.automirrored.filled.FormatIndentIncrease
+import androidx.compose.material.icons.automirrored.filled.FormatListBulleted
+import androidx.compose.material.icons.automirrored.filled.FormatTextdirectionLToR
+import androidx.compose.material.icons.automirrored.filled.FormatTextdirectionRToL
+import androidx.compose.material.icons.automirrored.filled.Forward
+import androidx.compose.material.icons.automirrored.filled.ForwardToInbox
+import androidx.compose.material.icons.automirrored.filled.Grading
+import androidx.compose.material.icons.automirrored.filled.Help
+import androidx.compose.material.icons.automirrored.filled.HelpCenter
+import androidx.compose.material.icons.automirrored.filled.HelpOutline
+import androidx.compose.material.icons.automirrored.filled.Input
+import androidx.compose.material.icons.automirrored.filled.InsertComment
+import androidx.compose.material.icons.automirrored.filled.InsertDriveFile
+import androidx.compose.material.icons.automirrored.filled.KeyboardBackspace
+import androidx.compose.material.icons.automirrored.filled.KeyboardReturn
+import androidx.compose.material.icons.automirrored.filled.KeyboardTab
+import androidx.compose.material.icons.automirrored.filled.Label
+import androidx.compose.material.icons.automirrored.filled.LabelImportant
+import androidx.compose.material.icons.automirrored.filled.LabelOff
+import androidx.compose.material.icons.automirrored.filled.LastPage
+import androidx.compose.material.icons.automirrored.filled.Launch
+import androidx.compose.material.icons.automirrored.filled.LibraryBooks
+import androidx.compose.material.icons.automirrored.filled.ListAlt
+import androidx.compose.material.icons.automirrored.filled.LiveHelp
+import androidx.compose.material.icons.automirrored.filled.Login
+import androidx.compose.material.icons.automirrored.filled.Logout
+import androidx.compose.material.icons.automirrored.filled.ManageSearch
+import androidx.compose.material.icons.automirrored.filled.MenuBook
+import androidx.compose.material.icons.automirrored.filled.MenuOpen
+import androidx.compose.material.icons.automirrored.filled.MergeType
+import androidx.compose.material.icons.automirrored.filled.Message
+import androidx.compose.material.icons.automirrored.filled.MissedVideoCall
+import androidx.compose.material.icons.automirrored.filled.MobileScreenShare
+import androidx.compose.material.icons.automirrored.filled.More
+import androidx.compose.material.icons.automirrored.filled.MultilineChart
+import androidx.compose.material.icons.automirrored.filled.NavigateBefore
+import androidx.compose.material.icons.automirrored.filled.NavigateNext
+import androidx.compose.material.icons.automirrored.filled.NextPlan
+import androidx.compose.material.icons.automirrored.filled.NextWeek
+import androidx.compose.material.icons.automirrored.filled.NotListedLocation
+import androidx.compose.material.icons.automirrored.filled.Note
+import androidx.compose.material.icons.automirrored.filled.NoteAdd
+import androidx.compose.material.icons.automirrored.filled.Notes
+import androidx.compose.material.icons.automirrored.filled.OfflineShare
+import androidx.compose.material.icons.automirrored.filled.OpenInNew
+import androidx.compose.material.icons.automirrored.filled.Outbound
+import androidx.compose.material.icons.automirrored.filled.PhoneCallback
+import androidx.compose.material.icons.automirrored.filled.PhoneForwarded
+import androidx.compose.material.icons.automirrored.filled.PhoneMissed
+import androidx.compose.material.icons.automirrored.filled.PlaylistAdd
+import androidx.compose.material.icons.automirrored.filled.PlaylistAddCheck
+import androidx.compose.material.icons.automirrored.filled.PlaylistPlay
+import androidx.compose.material.icons.automirrored.filled.QueueMusic
+import androidx.compose.material.icons.automirrored.filled.ReadMore
+import androidx.compose.material.icons.automirrored.filled.ReceiptLong
+import androidx.compose.material.icons.automirrored.filled.Redo
+import androidx.compose.material.icons.automirrored.filled.Reply
+import androidx.compose.material.icons.automirrored.filled.ReplyAll
+import androidx.compose.material.icons.automirrored.filled.RotateLeft
+import androidx.compose.material.icons.automirrored.filled.RotateRight
+import androidx.compose.material.icons.automirrored.filled.Rtt
+import androidx.compose.material.icons.automirrored.filled.Rule
+import androidx.compose.material.icons.automirrored.filled.ScheduleSend
+import androidx.compose.material.icons.automirrored.filled.ScreenShare
+import androidx.compose.material.icons.automirrored.filled.Segment
+import androidx.compose.material.icons.automirrored.filled.SendAndArchive
+import androidx.compose.material.icons.automirrored.filled.SendToMobile
+import androidx.compose.material.icons.automirrored.filled.ShortText
+import androidx.compose.material.icons.automirrored.filled.Shortcut
+import androidx.compose.material.icons.automirrored.filled.ShowChart
+import androidx.compose.material.icons.automirrored.filled.Sort
+import androidx.compose.material.icons.automirrored.filled.SpeakerNotes
+import androidx.compose.material.icons.automirrored.filled.StarHalf
+import androidx.compose.material.icons.automirrored.filled.StickyNote2
+import androidx.compose.material.icons.automirrored.filled.StopScreenShare
+import androidx.compose.material.icons.automirrored.filled.Subject
+import androidx.compose.material.icons.automirrored.filled.TextSnippet
+import androidx.compose.material.icons.automirrored.filled.Toc
+import androidx.compose.material.icons.automirrored.filled.TrendingDown
+import androidx.compose.material.icons.automirrored.filled.TrendingFlat
+import androidx.compose.material.icons.automirrored.filled.TrendingUp
+import androidx.compose.material.icons.automirrored.filled.Undo
+import androidx.compose.material.icons.automirrored.filled.ViewList
+import androidx.compose.material.icons.automirrored.filled.ViewQuilt
+import androidx.compose.material.icons.automirrored.filled.ViewSidebar
+import androidx.compose.material.icons.automirrored.filled.VolumeDown
+import androidx.compose.material.icons.automirrored.filled.VolumeMute
+import androidx.compose.material.icons.automirrored.filled.VolumeOff
+import androidx.compose.material.icons.automirrored.filled.VolumeUp
+import androidx.compose.material.icons.automirrored.filled.WrapText
+import androidx.compose.material.icons.automirrored.filled.Wysiwyg
 import androidx.compose.material.icons.filled.Abc
 import androidx.compose.material.icons.filled.AcUnit
 import androidx.compose.material.icons.filled.AccessAlarm
@@ -9,8 +146,6 @@ import androidx.compose.material.icons.filled.AccessTime
 import androidx.compose.material.icons.filled.AccessTimeFilled
 import androidx.compose.material.icons.filled.Accessibility
 import androidx.compose.material.icons.filled.AccessibilityNew
-import androidx.compose.material.icons.filled.Accessible
-import androidx.compose.material.icons.filled.AccessibleForward
 import androidx.compose.material.icons.filled.AccountBalance
 import androidx.compose.material.icons.filled.AccountBalanceWallet
 import androidx.compose.material.icons.filled.AccountTree
@@ -57,7 +192,6 @@ import androidx.compose.material.icons.filled.AirlineSeatReclineExtra
 import androidx.compose.material.icons.filled.AirlineSeatReclineNormal
 import androidx.compose.material.icons.filled.AirlineStops
 import androidx.compose.material.icons.filled.Airlines
-import androidx.compose.material.icons.filled.AirplaneTicket
 import androidx.compose.material.icons.filled.AirplanemodeActive
 import androidx.compose.material.icons.filled.AirplanemodeInactive
 import androidx.compose.material.icons.filled.Airplay
@@ -68,22 +202,18 @@ import androidx.compose.material.icons.filled.AlarmOff
 import androidx.compose.material.icons.filled.AlarmOn
 import androidx.compose.material.icons.filled.Album
 import androidx.compose.material.icons.filled.AlignHorizontalCenter
-import androidx.compose.material.icons.filled.AlignHorizontalLeft
-import androidx.compose.material.icons.filled.AlignHorizontalRight
 import androidx.compose.material.icons.filled.AlignVerticalBottom
 import androidx.compose.material.icons.filled.AlignVerticalCenter
 import androidx.compose.material.icons.filled.AlignVerticalTop
 import androidx.compose.material.icons.filled.AllInbox
 import androidx.compose.material.icons.filled.AllInclusive
 import androidx.compose.material.icons.filled.AllOut
-import androidx.compose.material.icons.filled.AltRoute
 import androidx.compose.material.icons.filled.AlternateEmail
 import androidx.compose.material.icons.filled.AmpStories
 import androidx.compose.material.icons.filled.Analytics
 import androidx.compose.material.icons.filled.Anchor
 import androidx.compose.material.icons.filled.Android
 import androidx.compose.material.icons.filled.Animation
-import androidx.compose.material.icons.filled.Announcement
 import androidx.compose.material.icons.filled.Aod
 import androidx.compose.material.icons.filled.Apartment
 import androidx.compose.material.icons.filled.Api
@@ -106,25 +236,17 @@ import androidx.compose.material.icons.filled.ArrowCircleUp
 import androidx.compose.material.icons.filled.ArrowDownward
 import androidx.compose.material.icons.filled.ArrowDropDownCircle
 import androidx.compose.material.icons.filled.ArrowDropUp
-import androidx.compose.material.icons.filled.ArrowForwardIos
-import androidx.compose.material.icons.filled.ArrowLeft
 import androidx.compose.material.icons.filled.ArrowOutward
-import androidx.compose.material.icons.filled.ArrowRight
-import androidx.compose.material.icons.filled.ArrowRightAlt
 import androidx.compose.material.icons.filled.ArrowUpward
 import androidx.compose.material.icons.filled.ArtTrack
-import androidx.compose.material.icons.filled.Article
 import androidx.compose.material.icons.filled.AspectRatio
 import androidx.compose.material.icons.filled.Assessment
-import androidx.compose.material.icons.filled.Assignment
 import androidx.compose.material.icons.filled.AssignmentInd
 import androidx.compose.material.icons.filled.AssignmentLate
-import androidx.compose.material.icons.filled.AssignmentReturn
 import androidx.compose.material.icons.filled.AssignmentReturned
 import androidx.compose.material.icons.filled.AssignmentTurnedIn
 import androidx.compose.material.icons.filled.AssistWalker
 import androidx.compose.material.icons.filled.Assistant
-import androidx.compose.material.icons.filled.AssistantDirection
 import androidx.compose.material.icons.filled.AssistantPhoto
 import androidx.compose.material.icons.filled.AssuredWorkload
 import androidx.compose.material.icons.filled.Atm
@@ -152,7 +274,6 @@ import androidx.compose.material.icons.filled.AvTimer
 import androidx.compose.material.icons.filled.BabyChangingStation
 import androidx.compose.material.icons.filled.BackHand
 import androidx.compose.material.icons.filled.Backpack
-import androidx.compose.material.icons.filled.Backspace
 import androidx.compose.material.icons.filled.Backup
 import androidx.compose.material.icons.filled.BackupTable
 import androidx.compose.material.icons.filled.Badge
@@ -176,7 +297,6 @@ import androidx.compose.material.icons.filled.BatteryChargingFull
 import androidx.compose.material.icons.filled.BatteryFull
 import androidx.compose.material.icons.filled.BatterySaver
 import androidx.compose.material.icons.filled.BatteryStd
-import androidx.compose.material.icons.filled.BatteryUnknown
 import androidx.compose.material.icons.filled.BeachAccess
 import androidx.compose.material.icons.filled.Bed
 import androidx.compose.material.icons.filled.BedroomBaby
@@ -199,7 +319,6 @@ import androidx.compose.material.icons.filled.BluetoothAudio
 import androidx.compose.material.icons.filled.BluetoothConnected
 import androidx.compose.material.icons.filled.BluetoothDisabled
 import androidx.compose.material.icons.filled.BluetoothDrive
-import androidx.compose.material.icons.filled.BluetoothSearching
 import androidx.compose.material.icons.filled.BlurCircular
 import androidx.compose.material.icons.filled.BlurLinear
 import androidx.compose.material.icons.filled.BlurOff
@@ -226,7 +345,6 @@ import androidx.compose.material.icons.filled.BorderStyle
 import androidx.compose.material.icons.filled.BorderTop
 import androidx.compose.material.icons.filled.BorderVertical
 import androidx.compose.material.icons.filled.Boy
-import androidx.compose.material.icons.filled.BrandingWatermark
 import androidx.compose.material.icons.filled.BreakfastDining
 import androidx.compose.material.icons.filled.Brightness1
 import androidx.compose.material.icons.filled.Brightness2
@@ -2040,8 +2158,8 @@ val iconByName = mapOf(
     "AccessAlarms" to Icons.Filled.AccessAlarms,
     "Accessibility" to Icons.Filled.Accessibility,
     "AccessibilityNew" to Icons.Filled.AccessibilityNew,
-    "AccessibleForward" to Icons.Filled.AccessibleForward,
-    "Accessible" to Icons.Filled.Accessible,
+    "AccessibleForward" to Icons.AutoMirrored.Filled.AccessibleForward,
+    "Accessible" to Icons.AutoMirrored.Filled.Accessible,
     "AccessTimeFilled" to Icons.Filled.AccessTimeFilled,
     "AccessTime" to Icons.Filled.AccessTime,
     "AccountBalance" to Icons.Filled.AccountBalance,
@@ -2071,7 +2189,7 @@ val iconByName = mapOf(
     "AddShoppingCart" to Icons.Filled.AddShoppingCart,
     "AddTask" to Icons.Filled.AddTask,
     "AddToDrive" to Icons.Filled.AddToDrive,
-    "AddToHomeScreen" to Icons.Filled.AddToHomeScreen,
+    "AddToHomeScreen" to Icons.AutoMirrored.Filled.AddToHomeScreen,
     "AddToPhotos" to Icons.Filled.AddToPhotos,
     "AddToQueue" to Icons.Filled.AddToQueue,
     "AdfScanner" to Icons.Filled.AdfScanner,
@@ -2093,7 +2211,7 @@ val iconByName = mapOf(
     "AirlineStops" to Icons.Filled.AirlineStops,
     "AirplanemodeActive" to Icons.Filled.AirplanemodeActive,
     "AirplanemodeInactive" to Icons.Filled.AirplanemodeInactive,
-    "AirplaneTicket" to Icons.Filled.AirplaneTicket,
+    "AirplaneTicket" to Icons.AutoMirrored.Filled.AirplaneTicket,
     "Airplay" to Icons.Filled.Airplay,
     "AirportShuttle" to Icons.Filled.AirportShuttle,
     "AlarmAdd" to Icons.Filled.AlarmAdd,
@@ -2102,8 +2220,8 @@ val iconByName = mapOf(
     "AlarmOn" to Icons.Filled.AlarmOn,
     "Album" to Icons.Filled.Album,
     "AlignHorizontalCenter" to Icons.Filled.AlignHorizontalCenter,
-    "AlignHorizontalLeft" to Icons.Filled.AlignHorizontalLeft,
-    "AlignHorizontalRight" to Icons.Filled.AlignHorizontalRight,
+    "AlignHorizontalLeft" to Icons.AutoMirrored.Filled.AlignHorizontalLeft,
+    "AlignHorizontalRight" to Icons.AutoMirrored.Filled.AlignHorizontalRight,
     "AlignVerticalBottom" to Icons.Filled.AlignVerticalBottom,
     "AlignVerticalCenter" to Icons.Filled.AlignVerticalCenter,
     "AlignVerticalTop" to Icons.Filled.AlignVerticalTop,
@@ -2111,13 +2229,13 @@ val iconByName = mapOf(
     "AllInclusive" to Icons.Filled.AllInclusive,
     "AllOut" to Icons.Filled.AllOut,
     "AlternateEmail" to Icons.Filled.AlternateEmail,
-    "AltRoute" to Icons.Filled.AltRoute,
+    "AltRoute" to Icons.AutoMirrored.Filled.AltRoute,
     "AmpStories" to Icons.Filled.AmpStories,
     "Analytics" to Icons.Filled.Analytics,
     "Anchor" to Icons.Filled.Anchor,
     "Android" to Icons.Filled.Android,
     "Animation" to Icons.Filled.Animation,
-    "Announcement" to Icons.Filled.Announcement,
+    "Announcement" to Icons.AutoMirrored.Filled.Announcement,
     "Aod" to Icons.Filled.Aod,
     "Apartment" to Icons.Filled.Apartment,
     "Api" to Icons.Filled.Api,
@@ -2131,7 +2249,7 @@ val iconByName = mapOf(
     "Architecture" to Icons.Filled.Architecture,
     "Archive" to Icons.Filled.Archive,
     "AreaChart" to Icons.Filled.AreaChart,
-    "ArrowBackIos" to Icons.Filled.ArrowBackIos,
+    "ArrowBackIos" to Icons.AutoMirrored.Filled.ArrowBackIos,
     "ArrowBackIosNew" to Icons.Filled.ArrowBackIosNew,
     "ArrowCircleDown" to Icons.Filled.ArrowCircleDown,
     "ArrowCircleLeft" to Icons.Filled.ArrowCircleLeft,
@@ -2140,23 +2258,23 @@ val iconByName = mapOf(
     "ArrowDownward" to Icons.Filled.ArrowDownward,
     "ArrowDropDownCircle" to Icons.Filled.ArrowDropDownCircle,
     "ArrowDropUp" to Icons.Filled.ArrowDropUp,
-    "ArrowForwardIos" to Icons.Filled.ArrowForwardIos,
-    "ArrowLeft" to Icons.Filled.ArrowLeft,
+    "ArrowForwardIos" to Icons.AutoMirrored.Filled.ArrowForwardIos,
+    "ArrowLeft" to Icons.AutoMirrored.Filled.ArrowLeft,
     "ArrowOutward" to Icons.Filled.ArrowOutward,
-    "ArrowRightAlt" to Icons.Filled.ArrowRightAlt,
-    "ArrowRight" to Icons.Filled.ArrowRight,
+    "ArrowRightAlt" to Icons.AutoMirrored.Filled.ArrowRightAlt,
+    "ArrowRight" to Icons.AutoMirrored.Filled.ArrowRight,
     "ArrowUpward" to Icons.Filled.ArrowUpward,
-    "Article" to Icons.Filled.Article,
+    "Article" to Icons.AutoMirrored.Filled.Article,
     "ArtTrack" to Icons.Filled.ArtTrack,
     "AspectRatio" to Icons.Filled.AspectRatio,
     "Assessment" to Icons.Filled.Assessment,
     "AssignmentInd" to Icons.Filled.AssignmentInd,
-    "Assignment" to Icons.Filled.Assignment,
+    "Assignment" to Icons.AutoMirrored.Filled.Assignment,
     "AssignmentLate" to Icons.Filled.AssignmentLate,
     "AssignmentReturned" to Icons.Filled.AssignmentReturned,
-    "AssignmentReturn" to Icons.Filled.AssignmentReturn,
+    "AssignmentReturn" to Icons.AutoMirrored.Filled.AssignmentReturn,
     "AssignmentTurnedIn" to Icons.Filled.AssignmentTurnedIn,
-    "AssistantDirection" to Icons.Filled.AssistantDirection,
+    "AssistantDirection" to Icons.AutoMirrored.Filled.AssistantDirection,
     "Assistant" to Icons.Filled.Assistant,
     "AssistantPhoto" to Icons.Filled.AssistantPhoto,
     "AssistWalker" to Icons.Filled.AssistWalker,
@@ -2186,7 +2304,7 @@ val iconByName = mapOf(
     "BabyChangingStation" to Icons.Filled.BabyChangingStation,
     "BackHand" to Icons.Filled.BackHand,
     "Backpack" to Icons.Filled.Backpack,
-    "Backspace" to Icons.Filled.Backspace,
+    "Backspace" to Icons.AutoMirrored.Filled.Backspace,
     "Backup" to Icons.Filled.Backup,
     "BackupTable" to Icons.Filled.BackupTable,
     "Badge" to Icons.Filled.Badge,
@@ -2210,7 +2328,7 @@ val iconByName = mapOf(
     "BatteryFull" to Icons.Filled.BatteryFull,
     "BatterySaver" to Icons.Filled.BatterySaver,
     "BatteryStd" to Icons.Filled.BatteryStd,
-    "BatteryUnknown" to Icons.Filled.BatteryUnknown,
+    "BatteryUnknown" to Icons.AutoMirrored.Filled.BatteryUnknown,
     "BeachAccess" to Icons.Filled.BeachAccess,
     "Bed" to Icons.Filled.Bed,
     "BedroomBaby" to Icons.Filled.BedroomBaby,
@@ -2233,7 +2351,7 @@ val iconByName = mapOf(
     "BluetoothDisabled" to Icons.Filled.BluetoothDisabled,
     "BluetoothDrive" to Icons.Filled.BluetoothDrive,
     "Bluetooth" to Icons.Filled.Bluetooth,
-    "BluetoothSearching" to Icons.Filled.BluetoothSearching,
+    "BluetoothSearching" to Icons.AutoMirrored.Filled.BluetoothSearching,
     "BlurCircular" to Icons.Filled.BlurCircular,
     "BlurLinear" to Icons.Filled.BlurLinear,
     "BlurOff" to Icons.Filled.BlurOff,
@@ -2260,7 +2378,7 @@ val iconByName = mapOf(
     "BorderTop" to Icons.Filled.BorderTop,
     "BorderVertical" to Icons.Filled.BorderVertical,
     "Boy" to Icons.Filled.Boy,
-    "BrandingWatermark" to Icons.Filled.BrandingWatermark,
+    "BrandingWatermark" to Icons.AutoMirrored.Filled.BrandingWatermark,
     "BreakfastDining" to Icons.Filled.BreakfastDining,
     "Brightness1" to Icons.Filled.Brightness1,
     "Brightness2" to Icons.Filled.Brightness2,
@@ -2300,12 +2418,12 @@ val iconByName = mapOf(
     "CalendarViewMonth" to Icons.Filled.CalendarViewMonth,
     "CalendarViewWeek" to Icons.Filled.CalendarViewWeek,
     "CallEnd" to Icons.Filled.CallEnd,
-    "CallMade" to Icons.Filled.CallMade,
-    "CallMerge" to Icons.Filled.CallMerge,
-    "CallMissed" to Icons.Filled.CallMissed,
-    "CallMissedOutgoing" to Icons.Filled.CallMissedOutgoing,
-    "CallReceived" to Icons.Filled.CallReceived,
-    "CallSplit" to Icons.Filled.CallSplit,
+    "CallMade" to Icons.AutoMirrored.Filled.CallMade,
+    "CallMerge" to Icons.AutoMirrored.Filled.CallMerge,
+    "CallMissed" to Icons.AutoMirrored.Filled.CallMissed,
+    "CallMissedOutgoing" to Icons.AutoMirrored.Filled.CallMissedOutgoing,
+    "CallReceived" to Icons.AutoMirrored.Filled.CallReceived,
+    "CallSplit" to Icons.AutoMirrored.Filled.CallSplit,
     "CallToAction" to Icons.Filled.CallToAction,
     "CameraAlt" to Icons.Filled.CameraAlt,
     "CameraEnhance" to Icons.Filled.CameraEnhance,
@@ -2349,7 +2467,7 @@ val iconByName = mapOf(
     "ChargingStation" to Icons.Filled.ChargingStation,
     "ChatBubble" to Icons.Filled.ChatBubble,
     "ChatBubbleOutline" to Icons.Filled.ChatBubbleOutline,
-    "Chat" to Icons.Filled.Chat,
+    "Chat" to Icons.AutoMirrored.Filled.Chat,
     "CheckBox" to Icons.Filled.CheckBox,
     "CheckBoxOutlineBlank" to Icons.Filled.CheckBoxOutlineBlank,
     "CheckCircleOutline" to Icons.Filled.CheckCircleOutline,
@@ -2360,7 +2478,7 @@ val iconByName = mapOf(
     "ChevronRight" to Icons.Filled.ChevronRight,
     "ChildCare" to Icons.Filled.ChildCare,
     "ChildFriendly" to Icons.Filled.ChildFriendly,
-    "ChromeReaderMode" to Icons.Filled.ChromeReaderMode,
+    "ChromeReaderMode" to Icons.AutoMirrored.Filled.ChromeReaderMode,
     "Church" to Icons.Filled.Church,
     "Circle" to Icons.Filled.Circle,
     "CircleNotifications" to Icons.Filled.CircleNotifications,
@@ -2390,11 +2508,11 @@ val iconByName = mapOf(
     "Colorize" to Icons.Filled.Colorize,
     "ColorLens" to Icons.Filled.ColorLens,
     "CommentBank" to Icons.Filled.CommentBank,
-    "Comment" to Icons.Filled.Comment,
+    "Comment" to Icons.AutoMirrored.Filled.Comment,
     "CommentsDisabled" to Icons.Filled.CommentsDisabled,
     "Commit" to Icons.Filled.Commit,
     "Commute" to Icons.Filled.Commute,
-    "CompareArrows" to Icons.Filled.CompareArrows,
+    "CompareArrows" to Icons.AutoMirrored.Filled.CompareArrows,
     "Compare" to Icons.Filled.Compare,
     "CompassCalibration" to Icons.Filled.CompassCalibration,
     "Compost" to Icons.Filled.Compost,
@@ -2411,7 +2529,7 @@ val iconByName = mapOf(
     "ContactPage" to Icons.Filled.ContactPage,
     "ContactPhone" to Icons.Filled.ContactPhone,
     "Contacts" to Icons.Filled.Contacts,
-    "ContactSupport" to Icons.Filled.ContactSupport,
+    "ContactSupport" to Icons.AutoMirrored.Filled.ContactSupport,
     "ContentCopy" to Icons.Filled.ContentCopy,
     "ContentCut" to Icons.Filled.ContentCut,
     "ContentPasteGo" to Icons.Filled.ContentPasteGo,
@@ -2509,7 +2627,7 @@ val iconByName = mapOf(
     "Difference" to Icons.Filled.Difference,
     "Dining" to Icons.Filled.Dining,
     "DinnerDining" to Icons.Filled.DinnerDining,
-    "DirectionsBike" to Icons.Filled.DirectionsBike,
+    "DirectionsBike" to Icons.AutoMirrored.Filled.DirectionsBike,
     "DirectionsBoatFilled" to Icons.Filled.DirectionsBoatFilled,
     "DirectionsBoat" to Icons.Filled.DirectionsBoat,
     "DirectionsBusFilled" to Icons.Filled.DirectionsBusFilled,
@@ -2520,12 +2638,12 @@ val iconByName = mapOf(
     "DirectionsOff" to Icons.Filled.DirectionsOff,
     "DirectionsRailwayFilled" to Icons.Filled.DirectionsRailwayFilled,
     "DirectionsRailway" to Icons.Filled.DirectionsRailway,
-    "DirectionsRun" to Icons.Filled.DirectionsRun,
+    "DirectionsRun" to Icons.AutoMirrored.Filled.DirectionsRun,
     "DirectionsSubwayFilled" to Icons.Filled.DirectionsSubwayFilled,
     "DirectionsSubway" to Icons.Filled.DirectionsSubway,
     "DirectionsTransitFilled" to Icons.Filled.DirectionsTransitFilled,
     "DirectionsTransit" to Icons.Filled.DirectionsTransit,
-    "DirectionsWalk" to Icons.Filled.DirectionsWalk,
+    "DirectionsWalk" to Icons.AutoMirrored.Filled.DirectionsWalk,
     "DirtyLens" to Icons.Filled.DirtyLens,
     "DisabledByDefault" to Icons.Filled.DisabledByDefault,
     "DisabledVisible" to Icons.Filled.DisabledVisible,
@@ -2572,14 +2690,14 @@ val iconByName = mapOf(
     "DragIndicator" to Icons.Filled.DragIndicator,
     "Draw" to Icons.Filled.Draw,
     "DriveEta" to Icons.Filled.DriveEta,
-    "DriveFileMove" to Icons.Filled.DriveFileMove,
+    "DriveFileMove" to Icons.AutoMirrored.Filled.DriveFileMove,
     "DriveFileMoveRtl" to Icons.Filled.DriveFileMoveRtl,
     "DriveFileRenameOutline" to Icons.Filled.DriveFileRenameOutline,
     "DriveFolderUpload" to Icons.Filled.DriveFolderUpload,
     "DryCleaning" to Icons.Filled.DryCleaning,
     "Dry" to Icons.Filled.Dry,
     "Duo" to Icons.Filled.Duo,
-    "Dvr" to Icons.Filled.Dvr,
+    "Dvr" to Icons.AutoMirrored.Filled.Dvr,
     "DynamicFeed" to Icons.Filled.DynamicFeed,
     "DynamicForm" to Icons.Filled.DynamicForm,
     "EarbudsBattery" to Icons.Filled.EarbudsBattery,
@@ -2636,7 +2754,7 @@ val iconByName = mapOf(
     "EventAvailable" to Icons.Filled.EventAvailable,
     "EventBusy" to Icons.Filled.EventBusy,
     "Event" to Icons.Filled.Event,
-    "EventNote" to Icons.Filled.EventNote,
+    "EventNote" to Icons.AutoMirrored.Filled.EventNote,
     "EventRepeat" to Icons.Filled.EventRepeat,
     "EventSeat" to Icons.Filled.EventSeat,
     "EvStation" to Icons.Filled.EvStation,
@@ -2664,17 +2782,17 @@ val iconByName = mapOf(
     "Facebook" to Icons.Filled.Facebook,
     "FaceRetouchingNatural" to Icons.Filled.FaceRetouchingNatural,
     "FaceRetouchingOff" to Icons.Filled.FaceRetouchingOff,
-    "FactCheck" to Icons.Filled.FactCheck,
+    "FactCheck" to Icons.AutoMirrored.Filled.FactCheck,
     "Factory" to Icons.Filled.Factory,
     "FamilyRestroom" to Icons.Filled.FamilyRestroom,
     "Fastfood" to Icons.Filled.Fastfood,
     "FastForward" to Icons.Filled.FastForward,
     "FastRewind" to Icons.Filled.FastRewind,
     "Fax" to Icons.Filled.Fax,
-    "FeaturedPlayList" to Icons.Filled.FeaturedPlayList,
-    "FeaturedVideo" to Icons.Filled.FeaturedVideo,
+    "FeaturedPlayList" to Icons.AutoMirrored.Filled.FeaturedPlayList,
+    "FeaturedVideo" to Icons.AutoMirrored.Filled.FeaturedVideo,
     "Feedback" to Icons.Filled.Feedback,
-    "Feed" to Icons.Filled.Feed,
+    "Feed" to Icons.AutoMirrored.Filled.Feed,
     "Female" to Icons.Filled.Female,
     "Fence" to Icons.Filled.Fence,
     "Festival" to Icons.Filled.Festival,
@@ -2757,7 +2875,7 @@ val iconByName = mapOf(
     "FolderShared" to Icons.Filled.FolderShared,
     "FolderSpecial" to Icons.Filled.FolderSpecial,
     "FolderZip" to Icons.Filled.FolderZip,
-    "FollowTheSigns" to Icons.Filled.FollowTheSigns,
+    "FollowTheSigns" to Icons.AutoMirrored.Filled.FollowTheSigns,
     "FontDownload" to Icons.Filled.FontDownload,
     "FontDownloadOff" to Icons.Filled.FontDownloadOff,
     "FoodBank" to Icons.Filled.FoodBank,
@@ -2766,18 +2884,18 @@ val iconByName = mapOf(
     "ForkRight" to Icons.Filled.ForkRight,
     "FormatAlignCenter" to Icons.Filled.FormatAlignCenter,
     "FormatAlignJustify" to Icons.Filled.FormatAlignJustify,
-    "FormatAlignLeft" to Icons.Filled.FormatAlignLeft,
-    "FormatAlignRight" to Icons.Filled.FormatAlignRight,
+    "FormatAlignLeft" to Icons.AutoMirrored.Filled.FormatAlignLeft,
+    "FormatAlignRight" to Icons.AutoMirrored.Filled.FormatAlignRight,
     "FormatBold" to Icons.Filled.FormatBold,
     "FormatClear" to Icons.Filled.FormatClear,
     "FormatColorFill" to Icons.Filled.FormatColorFill,
     "FormatColorReset" to Icons.Filled.FormatColorReset,
     "FormatColorText" to Icons.Filled.FormatColorText,
-    "FormatIndentDecrease" to Icons.Filled.FormatIndentDecrease,
-    "FormatIndentIncrease" to Icons.Filled.FormatIndentIncrease,
+    "FormatIndentDecrease" to Icons.AutoMirrored.Filled.FormatIndentDecrease,
+    "FormatIndentIncrease" to Icons.AutoMirrored.Filled.FormatIndentIncrease,
     "FormatItalic" to Icons.Filled.FormatItalic,
     "FormatLineSpacing" to Icons.Filled.FormatLineSpacing,
-    "FormatListBulleted" to Icons.Filled.FormatListBulleted,
+    "FormatListBulleted" to Icons.AutoMirrored.Filled.FormatListBulleted,
     "FormatListNumbered" to Icons.Filled.FormatListNumbered,
     "FormatListNumberedRtl" to Icons.Filled.FormatListNumberedRtl,
     "FormatOverline" to Icons.Filled.FormatOverline,
@@ -2786,16 +2904,16 @@ val iconByName = mapOf(
     "FormatShapes" to Icons.Filled.FormatShapes,
     "FormatSize" to Icons.Filled.FormatSize,
     "FormatStrikethrough" to Icons.Filled.FormatStrikethrough,
-    "FormatTextdirectionLToR" to Icons.Filled.FormatTextdirectionLToR,
-    "FormatTextdirectionRToL" to Icons.Filled.FormatTextdirectionRToL,
+    "FormatTextdirectionLToR" to Icons.AutoMirrored.Filled.FormatTextdirectionLToR,
+    "FormatTextdirectionRToL" to Icons.AutoMirrored.Filled.FormatTextdirectionRToL,
     "FormatUnderlined" to Icons.Filled.FormatUnderlined,
     "Fort" to Icons.Filled.Fort,
     "Forum" to Icons.Filled.Forum,
     "Forward5" to Icons.Filled.Forward5,
     "Forward10" to Icons.Filled.Forward10,
     "Forward30" to Icons.Filled.Forward30,
-    "Forward" to Icons.Filled.Forward,
-    "ForwardToInbox" to Icons.Filled.ForwardToInbox,
+    "Forward" to Icons.AutoMirrored.Filled.Forward,
+    "ForwardToInbox" to Icons.AutoMirrored.Filled.ForwardToInbox,
     "Foundation" to Icons.Filled.Foundation,
     "FreeBreakfast" to Icons.Filled.FreeBreakfast,
     "FreeCancellation" to Icons.Filled.FreeCancellation,
@@ -2825,7 +2943,7 @@ val iconByName = mapOf(
     "GpsOff" to Icons.Filled.GpsOff,
     "Grade" to Icons.Filled.Grade,
     "Gradient" to Icons.Filled.Gradient,
-    "Grading" to Icons.Filled.Grading,
+    "Grading" to Icons.AutoMirrored.Filled.Grading,
     "Grain" to Icons.Filled.Grain,
     "GraphicEq" to Icons.Filled.GraphicEq,
     "Grass" to Icons.Filled.Grass,
@@ -2871,9 +2989,9 @@ val iconByName = mapOf(
     "HeartBroken" to Icons.Filled.HeartBroken,
     "HeatPump" to Icons.Filled.HeatPump,
     "Height" to Icons.Filled.Height,
-    "HelpCenter" to Icons.Filled.HelpCenter,
-    "Help" to Icons.Filled.Help,
-    "HelpOutline" to Icons.Filled.HelpOutline,
+    "HelpCenter" to Icons.AutoMirrored.Filled.HelpCenter,
+    "Help" to Icons.AutoMirrored.Filled.Help,
+    "HelpOutline" to Icons.AutoMirrored.Filled.HelpOutline,
     "Hevc" to Icons.Filled.Hevc,
     "Hexagon" to Icons.Filled.Hexagon,
     "HideImage" to Icons.Filled.HideImage,
@@ -2930,11 +3048,11 @@ val iconByName = mapOf(
     "Inbox" to Icons.Filled.Inbox,
     "IncompleteCircle" to Icons.Filled.IncompleteCircle,
     "IndeterminateCheckBox" to Icons.Filled.IndeterminateCheckBox,
-    "Input" to Icons.Filled.Input,
+    "Input" to Icons.AutoMirrored.Filled.Input,
     "InsertChart" to Icons.Filled.InsertChart,
     "InsertChartOutlined" to Icons.Filled.InsertChartOutlined,
-    "InsertComment" to Icons.Filled.InsertComment,
-    "InsertDriveFile" to Icons.Filled.InsertDriveFile,
+    "InsertComment" to Icons.AutoMirrored.Filled.InsertComment,
+    "InsertDriveFile" to Icons.AutoMirrored.Filled.InsertDriveFile,
     "InsertEmoticon" to Icons.Filled.InsertEmoticon,
     "InsertInvitation" to Icons.Filled.InsertInvitation,
     "InsertLink" to Icons.Filled.InsertLink,
@@ -2961,7 +3079,7 @@ val iconByName = mapOf(
     "Kayaking" to Icons.Filled.Kayaking,
     "KebabDining" to Icons.Filled.KebabDining,
     "KeyboardAlt" to Icons.Filled.KeyboardAlt,
-    "KeyboardBackspace" to Icons.Filled.KeyboardBackspace,
+    "KeyboardBackspace" to Icons.AutoMirrored.Filled.KeyboardBackspace,
     "KeyboardCapslock" to Icons.Filled.KeyboardCapslock,
     "KeyboardCommandKey" to Icons.Filled.KeyboardCommandKey,
     "KeyboardControlKey" to Icons.Filled.KeyboardControlKey,
@@ -2972,17 +3090,17 @@ val iconByName = mapOf(
     "KeyboardHide" to Icons.Filled.KeyboardHide,
     "Keyboard" to Icons.Filled.Keyboard,
     "KeyboardOptionKey" to Icons.Filled.KeyboardOptionKey,
-    "KeyboardReturn" to Icons.Filled.KeyboardReturn,
-    "KeyboardTab" to Icons.Filled.KeyboardTab,
+    "KeyboardReturn" to Icons.AutoMirrored.Filled.KeyboardReturn,
+    "KeyboardTab" to Icons.AutoMirrored.Filled.KeyboardTab,
     "KeyboardVoice" to Icons.Filled.KeyboardVoice,
     "Key" to Icons.Filled.Key,
     "KeyOff" to Icons.Filled.KeyOff,
     "KingBed" to Icons.Filled.KingBed,
     "Kitchen" to Icons.Filled.Kitchen,
     "Kitesurfing" to Icons.Filled.Kitesurfing,
-    "LabelImportant" to Icons.Filled.LabelImportant,
-    "Label" to Icons.Filled.Label,
-    "LabelOff" to Icons.Filled.LabelOff,
+    "LabelImportant" to Icons.AutoMirrored.Filled.LabelImportant,
+    "Label" to Icons.AutoMirrored.Filled.Label,
+    "LabelOff" to Icons.AutoMirrored.Filled.LabelOff,
     "Landscape" to Icons.Filled.Landscape,
     "Landslide" to Icons.Filled.Landslide,
     "Language" to Icons.Filled.Language,
@@ -2991,8 +3109,8 @@ val iconByName = mapOf(
     "Laptop" to Icons.Filled.Laptop,
     "LaptopMac" to Icons.Filled.LaptopMac,
     "LaptopWindows" to Icons.Filled.LaptopWindows,
-    "LastPage" to Icons.Filled.LastPage,
-    "Launch" to Icons.Filled.Launch,
+    "LastPage" to Icons.AutoMirrored.Filled.LastPage,
+    "Launch" to Icons.AutoMirrored.Filled.Launch,
     "LayersClear" to Icons.Filled.LayersClear,
     "Layers" to Icons.Filled.Layers,
     "Leaderboard" to Icons.Filled.Leaderboard,
@@ -3004,7 +3122,7 @@ val iconByName = mapOf(
     "Lens" to Icons.Filled.Lens,
     "LibraryAddCheck" to Icons.Filled.LibraryAddCheck,
     "LibraryAdd" to Icons.Filled.LibraryAdd,
-    "LibraryBooks" to Icons.Filled.LibraryBooks,
+    "LibraryBooks" to Icons.AutoMirrored.Filled.LibraryBooks,
     "LibraryMusic" to Icons.Filled.LibraryMusic,
     "LightbulbCircle" to Icons.Filled.LightbulbCircle,
     "Lightbulb" to Icons.Filled.Lightbulb,
@@ -3018,8 +3136,8 @@ val iconByName = mapOf(
     "Link" to Icons.Filled.Link,
     "LinkOff" to Icons.Filled.LinkOff,
     "Liquor" to Icons.Filled.Liquor,
-    "ListAlt" to Icons.Filled.ListAlt,
-    "LiveHelp" to Icons.Filled.LiveHelp,
+    "ListAlt" to Icons.AutoMirrored.Filled.ListAlt,
+    "LiveHelp" to Icons.AutoMirrored.Filled.LiveHelp,
     "LiveTv" to Icons.Filled.LiveTv,
     "Living" to Icons.Filled.Living,
     "LocalActivity" to Icons.Filled.LocalActivity,
@@ -3061,9 +3179,9 @@ val iconByName = mapOf(
     "LockOpen" to Icons.Filled.LockOpen,
     "LockPerson" to Icons.Filled.LockPerson,
     "LockReset" to Icons.Filled.LockReset,
-    "Login" to Icons.Filled.Login,
+    "Login" to Icons.AutoMirrored.Filled.Login,
     "LogoDev" to Icons.Filled.LogoDev,
-    "Logout" to Icons.Filled.Logout,
+    "Logout" to Icons.AutoMirrored.Filled.Logout,
     "Looks3" to Icons.Filled.Looks3,
     "Looks4" to Icons.Filled.Looks4,
     "Looks5" to Icons.Filled.Looks5,
@@ -3089,7 +3207,7 @@ val iconByName = mapOf(
     "Man4" to Icons.Filled.Man4,
     "ManageAccounts" to Icons.Filled.ManageAccounts,
     "ManageHistory" to Icons.Filled.ManageHistory,
-    "ManageSearch" to Icons.Filled.ManageSearch,
+    "ManageSearch" to Icons.AutoMirrored.Filled.ManageSearch,
     "Man" to Icons.Filled.Man,
     "Map" to Icons.Filled.Map,
     "MapsHomeWork" to Icons.Filled.MapsHomeWork,
@@ -3113,11 +3231,11 @@ val iconByName = mapOf(
     "Medication" to Icons.Filled.Medication,
     "MeetingRoom" to Icons.Filled.MeetingRoom,
     "Memory" to Icons.Filled.Memory,
-    "MenuBook" to Icons.Filled.MenuBook,
-    "MenuOpen" to Icons.Filled.MenuOpen,
+    "MenuBook" to Icons.AutoMirrored.Filled.MenuBook,
+    "MenuOpen" to Icons.AutoMirrored.Filled.MenuOpen,
     "Merge" to Icons.Filled.Merge,
-    "MergeType" to Icons.Filled.MergeType,
-    "Message" to Icons.Filled.Message,
+    "MergeType" to Icons.AutoMirrored.Filled.MergeType,
+    "Message" to Icons.AutoMirrored.Filled.Message,
     "MicExternalOff" to Icons.Filled.MicExternalOff,
     "MicExternalOn" to Icons.Filled.MicExternalOn,
     "Mic" to Icons.Filled.Mic,
@@ -3128,12 +3246,12 @@ val iconByName = mapOf(
     "Minimize" to Icons.Filled.Minimize,
     "MinorCrash" to Icons.Filled.MinorCrash,
     "MiscellaneousServices" to Icons.Filled.MiscellaneousServices,
-    "MissedVideoCall" to Icons.Filled.MissedVideoCall,
+    "MissedVideoCall" to Icons.AutoMirrored.Filled.MissedVideoCall,
     "Mms" to Icons.Filled.Mms,
     "MobiledataOff" to Icons.Filled.MobiledataOff,
     "MobileFriendly" to Icons.Filled.MobileFriendly,
     "MobileOff" to Icons.Filled.MobileOff,
-    "MobileScreenShare" to Icons.Filled.MobileScreenShare,
+    "MobileScreenShare" to Icons.AutoMirrored.Filled.MobileScreenShare,
     "ModeComment" to Icons.Filled.ModeComment,
     "ModeEdit" to Icons.Filled.ModeEdit,
     "ModeEditOutline" to Icons.Filled.ModeEditOutline,
@@ -3155,7 +3273,7 @@ val iconByName = mapOf(
     "Mood" to Icons.Filled.Mood,
     "Moped" to Icons.Filled.Moped,
     "MoreHoriz" to Icons.Filled.MoreHoriz,
-    "More" to Icons.Filled.More,
+    "More" to Icons.AutoMirrored.Filled.More,
     "MoreTime" to Icons.Filled.MoreTime,
     "Mosque" to Icons.Filled.Mosque,
     "MotionPhotosAuto" to Icons.Filled.MotionPhotosAuto,
@@ -3173,7 +3291,7 @@ val iconByName = mapOf(
     "Movie" to Icons.Filled.Movie,
     "Moving" to Icons.Filled.Moving,
     "Mp" to Icons.Filled.Mp,
-    "MultilineChart" to Icons.Filled.MultilineChart,
+    "MultilineChart" to Icons.AutoMirrored.Filled.MultilineChart,
     "MultipleStop" to Icons.Filled.MultipleStop,
     "Museum" to Icons.Filled.Museum,
     "MusicNote" to Icons.Filled.MusicNote,
@@ -3183,8 +3301,8 @@ val iconByName = mapOf(
     "Nat" to Icons.Filled.Nat,
     "Nature" to Icons.Filled.Nature,
     "NaturePeople" to Icons.Filled.NaturePeople,
-    "NavigateBefore" to Icons.Filled.NavigateBefore,
-    "NavigateNext" to Icons.Filled.NavigateNext,
+    "NavigateBefore" to Icons.AutoMirrored.Filled.NavigateBefore,
+    "NavigateNext" to Icons.AutoMirrored.Filled.NavigateNext,
     "Navigation" to Icons.Filled.Navigation,
     "NearbyError" to Icons.Filled.NearbyError,
     "NearbyOff" to Icons.Filled.NearbyOff,
@@ -3202,8 +3320,8 @@ val iconByName = mapOf(
     "NewLabel" to Icons.Filled.NewLabel,
     "NewReleases" to Icons.Filled.NewReleases,
     "Newspaper" to Icons.Filled.Newspaper,
-    "NextPlan" to Icons.Filled.NextPlan,
-    "NextWeek" to Icons.Filled.NextWeek,
+    "NextPlan" to Icons.AutoMirrored.Filled.NextPlan,
+    "NextWeek" to Icons.AutoMirrored.Filled.NextWeek,
     "Nfc" to Icons.Filled.Nfc,
     "Nightlife" to Icons.Filled.Nightlife,
     "Nightlight" to Icons.Filled.Nightlight,
@@ -3233,10 +3351,10 @@ val iconByName = mapOf(
     "NoSim" to Icons.Filled.NoSim,
     "NoStroller" to Icons.Filled.NoStroller,
     "NotAccessible" to Icons.Filled.NotAccessible,
-    "NoteAdd" to Icons.Filled.NoteAdd,
+    "NoteAdd" to Icons.AutoMirrored.Filled.NoteAdd,
     "NoteAlt" to Icons.Filled.NoteAlt,
-    "Note" to Icons.Filled.Note,
-    "Notes" to Icons.Filled.Notes,
+    "Note" to Icons.AutoMirrored.Filled.Note,
+    "Notes" to Icons.AutoMirrored.Filled.Notes,
     "NotificationAdd" to Icons.Filled.NotificationAdd,
     "NotificationImportant" to Icons.Filled.NotificationImportant,
     "NotificationsActive" to Icons.Filled.NotificationsActive,
@@ -3244,13 +3362,13 @@ val iconByName = mapOf(
     "NotificationsOff" to Icons.Filled.NotificationsOff,
     "NotificationsPaused" to Icons.Filled.NotificationsPaused,
     "NotInterested" to Icons.Filled.NotInterested,
-    "NotListedLocation" to Icons.Filled.NotListedLocation,
+    "NotListedLocation" to Icons.AutoMirrored.Filled.NotListedLocation,
     "NoTransfer" to Icons.Filled.NoTransfer,
     "NotStarted" to Icons.Filled.NotStarted,
     "Numbers" to Icons.Filled.Numbers,
     "OfflineBolt" to Icons.Filled.OfflineBolt,
     "OfflinePin" to Icons.Filled.OfflinePin,
-    "OfflineShare" to Icons.Filled.OfflineShare,
+    "OfflineShare" to Icons.AutoMirrored.Filled.OfflineShare,
     "OilBarrel" to Icons.Filled.OilBarrel,
     "OndemandVideo" to Icons.Filled.OndemandVideo,
     "OnDeviceTraining" to Icons.Filled.OnDeviceTraining,
@@ -3258,12 +3376,12 @@ val iconByName = mapOf(
     "Opacity" to Icons.Filled.Opacity,
     "OpenInBrowser" to Icons.Filled.OpenInBrowser,
     "OpenInFull" to Icons.Filled.OpenInFull,
-    "OpenInNew" to Icons.Filled.OpenInNew,
+    "OpenInNew" to Icons.AutoMirrored.Filled.OpenInNew,
     "OpenInNewOff" to Icons.Filled.OpenInNewOff,
     "OpenWith" to Icons.Filled.OpenWith,
     "OtherHouses" to Icons.Filled.OtherHouses,
     "Outbond" to Icons.Filled.Outbond,
-    "Outbound" to Icons.Filled.Outbound,
+    "Outbound" to Icons.AutoMirrored.Filled.Outbound,
     "Outbox" to Icons.Filled.Outbox,
     "OutdoorGrill" to Icons.Filled.OutdoorGrill,
     "Outlet" to Icons.Filled.Outlet,
@@ -3337,10 +3455,10 @@ val iconByName = mapOf(
     "Phishing" to Icons.Filled.Phishing,
     "PhoneAndroid" to Icons.Filled.PhoneAndroid,
     "PhoneBluetoothSpeaker" to Icons.Filled.PhoneBluetoothSpeaker,
-    "PhoneCallback" to Icons.Filled.PhoneCallback,
+    "PhoneCallback" to Icons.AutoMirrored.Filled.PhoneCallback,
     "PhoneDisabled" to Icons.Filled.PhoneDisabled,
     "PhoneEnabled" to Icons.Filled.PhoneEnabled,
-    "PhoneForwarded" to Icons.Filled.PhoneForwarded,
+    "PhoneForwarded" to Icons.AutoMirrored.Filled.PhoneForwarded,
     "PhoneInTalk" to Icons.Filled.PhoneInTalk,
     "PhoneIphone" to Icons.Filled.PhoneIphone,
     "PhonelinkErase" to Icons.Filled.PhonelinkErase,
@@ -3350,7 +3468,7 @@ val iconByName = mapOf(
     "PhonelinkRing" to Icons.Filled.PhonelinkRing,
     "PhonelinkSetup" to Icons.Filled.PhonelinkSetup,
     "PhoneLocked" to Icons.Filled.PhoneLocked,
-    "PhoneMissed" to Icons.Filled.PhoneMissed,
+    "PhoneMissed" to Icons.AutoMirrored.Filled.PhoneMissed,
     "PhonePaused" to Icons.Filled.PhonePaused,
     "PhotoAlbum" to Icons.Filled.PhotoAlbum,
     "PhotoCameraBack" to Icons.Filled.PhotoCameraBack,
@@ -3385,10 +3503,10 @@ val iconByName = mapOf(
     "PlayForWork" to Icons.Filled.PlayForWork,
     "PlayLesson" to Icons.Filled.PlayLesson,
     "PlaylistAddCheckCircle" to Icons.Filled.PlaylistAddCheckCircle,
-    "PlaylistAddCheck" to Icons.Filled.PlaylistAddCheck,
+    "PlaylistAddCheck" to Icons.AutoMirrored.Filled.PlaylistAddCheck,
     "PlaylistAddCircle" to Icons.Filled.PlaylistAddCircle,
-    "PlaylistAdd" to Icons.Filled.PlaylistAdd,
-    "PlaylistPlay" to Icons.Filled.PlaylistPlay,
+    "PlaylistAdd" to Icons.AutoMirrored.Filled.PlaylistAdd,
+    "PlaylistPlay" to Icons.AutoMirrored.Filled.PlaylistPlay,
     "PlaylistRemove" to Icons.Filled.PlaylistRemove,
     "Plumbing" to Icons.Filled.Plumbing,
     "PlusOne" to Icons.Filled.PlusOne,
@@ -3436,7 +3554,7 @@ val iconByName = mapOf(
     "QuestionAnswer" to Icons.Filled.QuestionAnswer,
     "QuestionMark" to Icons.Filled.QuestionMark,
     "Queue" to Icons.Filled.Queue,
-    "QueueMusic" to Icons.Filled.QueueMusic,
+    "QueueMusic" to Icons.AutoMirrored.Filled.QueueMusic,
     "QueuePlayNext" to Icons.Filled.QueuePlayNext,
     "Quickreply" to Icons.Filled.Quickreply,
     "Quiz" to Icons.Filled.Quiz,
@@ -3451,17 +3569,17 @@ val iconByName = mapOf(
     "RateReview" to Icons.Filled.RateReview,
     "RawOff" to Icons.Filled.RawOff,
     "RawOn" to Icons.Filled.RawOn,
-    "ReadMore" to Icons.Filled.ReadMore,
+    "ReadMore" to Icons.AutoMirrored.Filled.ReadMore,
     "RealEstateAgent" to Icons.Filled.RealEstateAgent,
     "Receipt" to Icons.Filled.Receipt,
-    "ReceiptLong" to Icons.Filled.ReceiptLong,
+    "ReceiptLong" to Icons.AutoMirrored.Filled.ReceiptLong,
     "RecentActors" to Icons.Filled.RecentActors,
     "Recommend" to Icons.Filled.Recommend,
     "RecordVoiceOver" to Icons.Filled.RecordVoiceOver,
     "Rectangle" to Icons.Filled.Rectangle,
     "Recycling" to Icons.Filled.Recycling,
     "Redeem" to Icons.Filled.Redeem,
-    "Redo" to Icons.Filled.Redo,
+    "Redo" to Icons.AutoMirrored.Filled.Redo,
     "ReduceCapacity" to Icons.Filled.ReduceCapacity,
     "RememberMe" to Icons.Filled.RememberMe,
     "RemoveCircle" to Icons.Filled.RemoveCircle,
@@ -3484,8 +3602,8 @@ val iconByName = mapOf(
     "Replay30" to Icons.Filled.Replay30,
     "ReplayCircleFilled" to Icons.Filled.ReplayCircleFilled,
     "Replay" to Icons.Filled.Replay,
-    "ReplyAll" to Icons.Filled.ReplyAll,
-    "Reply" to Icons.Filled.Reply,
+    "ReplyAll" to Icons.AutoMirrored.Filled.ReplyAll,
+    "Reply" to Icons.AutoMirrored.Filled.Reply,
     "ReportGmailerrorred" to Icons.Filled.ReportGmailerrorred,
     "Report" to Icons.Filled.Report,
     "ReportOff" to Icons.Filled.ReportOff,
@@ -3514,8 +3632,8 @@ val iconByName = mapOf(
     "RoomService" to Icons.Filled.RoomService,
     "Rotate90DegreesCcw" to Icons.Filled.Rotate90DegreesCcw,
     "Rotate90DegreesCw" to Icons.Filled.Rotate90DegreesCw,
-    "RotateLeft" to Icons.Filled.RotateLeft,
-    "RotateRight" to Icons.Filled.RotateRight,
+    "RotateLeft" to Icons.AutoMirrored.Filled.RotateLeft,
+    "RotateRight" to Icons.AutoMirrored.Filled.RotateRight,
     "RoundaboutLeft" to Icons.Filled.RoundaboutLeft,
     "RoundaboutRight" to Icons.Filled.RoundaboutRight,
     "RoundedCorner" to Icons.Filled.RoundedCorner,
@@ -3524,9 +3642,9 @@ val iconByName = mapOf(
     "Rowing" to Icons.Filled.Rowing,
     "RssFeed" to Icons.Filled.RssFeed,
     "Rsvp" to Icons.Filled.Rsvp,
-    "Rtt" to Icons.Filled.Rtt,
+    "Rtt" to Icons.AutoMirrored.Filled.Rtt,
     "RuleFolder" to Icons.Filled.RuleFolder,
-    "Rule" to Icons.Filled.Rule,
+    "Rule" to Icons.AutoMirrored.Filled.Rule,
     "RunCircle" to Icons.Filled.RunCircle,
     "RunningWithErrors" to Icons.Filled.RunningWithErrors,
     "RvHookup" to Icons.Filled.RvHookup,
@@ -3545,7 +3663,7 @@ val iconByName = mapOf(
     "Scanner" to Icons.Filled.Scanner,
     "ScatterPlot" to Icons.Filled.ScatterPlot,
     "Schedule" to Icons.Filled.Schedule,
-    "ScheduleSend" to Icons.Filled.ScheduleSend,
+    "ScheduleSend" to Icons.AutoMirrored.Filled.ScheduleSend,
     "Schema" to Icons.Filled.Schema,
     "School" to Icons.Filled.School,
     "Science" to Icons.Filled.Science,
@@ -3557,7 +3675,7 @@ val iconByName = mapOf(
     "ScreenRotationAlt" to Icons.Filled.ScreenRotationAlt,
     "ScreenRotation" to Icons.Filled.ScreenRotation,
     "ScreenSearchDesktop" to Icons.Filled.ScreenSearchDesktop,
-    "ScreenShare" to Icons.Filled.ScreenShare,
+    "ScreenShare" to Icons.AutoMirrored.Filled.ScreenShare,
     "Screenshot" to Icons.Filled.Screenshot,
     "ScreenshotMonitor" to Icons.Filled.ScreenshotMonitor,
     "ScubaDiving" to Icons.Filled.ScubaDiving,
@@ -3570,13 +3688,13 @@ val iconByName = mapOf(
     "SecurityUpdateGood" to Icons.Filled.SecurityUpdateGood,
     "SecurityUpdate" to Icons.Filled.SecurityUpdate,
     "SecurityUpdateWarning" to Icons.Filled.SecurityUpdateWarning,
-    "Segment" to Icons.Filled.Segment,
+    "Segment" to Icons.AutoMirrored.Filled.Segment,
     "SelectAll" to Icons.Filled.SelectAll,
     "SelfImprovement" to Icons.Filled.SelfImprovement,
     "Sell" to Icons.Filled.Sell,
-    "SendAndArchive" to Icons.Filled.SendAndArchive,
+    "SendAndArchive" to Icons.AutoMirrored.Filled.SendAndArchive,
     "SendTimeExtension" to Icons.Filled.SendTimeExtension,
-    "SendToMobile" to Icons.Filled.SendToMobile,
+    "SendToMobile" to Icons.AutoMirrored.Filled.SendToMobile,
     "SensorDoor" to Icons.Filled.SensorDoor,
     "SensorOccupied" to Icons.Filled.SensorOccupied,
     "Sensors" to Icons.Filled.Sensors,
@@ -3619,9 +3737,9 @@ val iconByName = mapOf(
     "ShoppingBasket" to Icons.Filled.ShoppingBasket,
     "ShoppingCartCheckout" to Icons.Filled.ShoppingCartCheckout,
     "ShopTwo" to Icons.Filled.ShopTwo,
-    "Shortcut" to Icons.Filled.Shortcut,
-    "ShortText" to Icons.Filled.ShortText,
-    "ShowChart" to Icons.Filled.ShowChart,
+    "Shortcut" to Icons.AutoMirrored.Filled.Shortcut,
+    "ShortText" to Icons.AutoMirrored.Filled.ShortText,
+    "ShowChart" to Icons.AutoMirrored.Filled.ShowChart,
     "Shower" to Icons.Filled.Shower,
     "Shuffle" to Icons.Filled.Shuffle,
     "ShuffleOn" to Icons.Filled.ShuffleOn,
@@ -3678,7 +3796,7 @@ val iconByName = mapOf(
     "SocialDistance" to Icons.Filled.SocialDistance,
     "SolarPower" to Icons.Filled.SolarPower,
     "SortByAlpha" to Icons.Filled.SortByAlpha,
-    "Sort" to Icons.Filled.Sort,
+    "Sort" to Icons.AutoMirrored.Filled.Sort,
     "Sos" to Icons.Filled.Sos,
     "SoupKitchen" to Icons.Filled.SoupKitchen,
     "Source" to Icons.Filled.Source,
@@ -3694,7 +3812,7 @@ val iconByName = mapOf(
     "SpatialTracking" to Icons.Filled.SpatialTracking,
     "SpeakerGroup" to Icons.Filled.SpeakerGroup,
     "Speaker" to Icons.Filled.Speaker,
-    "SpeakerNotes" to Icons.Filled.SpeakerNotes,
+    "SpeakerNotes" to Icons.AutoMirrored.Filled.SpeakerNotes,
     "SpeakerNotesOff" to Icons.Filled.SpeakerNotesOff,
     "SpeakerPhone" to Icons.Filled.SpeakerPhone,
     "Speed" to Icons.Filled.Speed,
@@ -3730,7 +3848,7 @@ val iconByName = mapOf(
     "Stairs" to Icons.Filled.Stairs,
     "StarBorder" to Icons.Filled.StarBorder,
     "StarBorderPurple500" to Icons.Filled.StarBorderPurple500,
-    "StarHalf" to Icons.Filled.StarHalf,
+    "StarHalf" to Icons.AutoMirrored.Filled.StarHalf,
     "StarOutline" to Icons.Filled.StarOutline,
     "StarPurple500" to Icons.Filled.StarPurple500,
     "StarRate" to Icons.Filled.StarRate,
@@ -3740,10 +3858,10 @@ val iconByName = mapOf(
     "StayCurrentPortrait" to Icons.Filled.StayCurrentPortrait,
     "StayPrimaryLandscape" to Icons.Filled.StayPrimaryLandscape,
     "StayPrimaryPortrait" to Icons.Filled.StayPrimaryPortrait,
-    "StickyNote2" to Icons.Filled.StickyNote2,
+    "StickyNote2" to Icons.AutoMirrored.Filled.StickyNote2,
     "StopCircle" to Icons.Filled.StopCircle,
     "Stop" to Icons.Filled.Stop,
-    "StopScreenShare" to Icons.Filled.StopScreenShare,
+    "StopScreenShare" to Icons.AutoMirrored.Filled.StopScreenShare,
     "Storage" to Icons.Filled.Storage,
     "Storefront" to Icons.Filled.Storefront,
     "Store" to Icons.Filled.Store,
@@ -3758,7 +3876,7 @@ val iconByName = mapOf(
     "Style" to Icons.Filled.Style,
     "SubdirectoryArrowLeft" to Icons.Filled.SubdirectoryArrowLeft,
     "SubdirectoryArrowRight" to Icons.Filled.SubdirectoryArrowRight,
-    "Subject" to Icons.Filled.Subject,
+    "Subject" to Icons.AutoMirrored.Filled.Subject,
     "Subscriptions" to Icons.Filled.Subscriptions,
     "Subscript" to Icons.Filled.Subscript,
     "Subtitles" to Icons.Filled.Subtitles,
@@ -3838,7 +3956,7 @@ val iconByName = mapOf(
     "TextRotationDown" to Icons.Filled.TextRotationDown,
     "TextRotationNone" to Icons.Filled.TextRotationNone,
     "Textsms" to Icons.Filled.Textsms,
-    "TextSnippet" to Icons.Filled.TextSnippet,
+    "TextSnippet" to Icons.AutoMirrored.Filled.TextSnippet,
     "Texture" to Icons.Filled.Texture,
     "TheaterComedy" to Icons.Filled.TheaterComedy,
     "Theaters" to Icons.Filled.Theaters,
@@ -3863,7 +3981,7 @@ val iconByName = mapOf(
     "TipsAndUpdates" to Icons.Filled.TipsAndUpdates,
     "TireRepair" to Icons.Filled.TireRepair,
     "Title" to Icons.Filled.Title,
-    "Toc" to Icons.Filled.Toc,
+    "Toc" to Icons.AutoMirrored.Filled.Toc,
     "Today" to Icons.Filled.Today,
     "ToggleOff" to Icons.Filled.ToggleOff,
     "ToggleOn" to Icons.Filled.ToggleOn,
@@ -3886,9 +4004,9 @@ val iconByName = mapOf(
     "TransitEnterexit" to Icons.Filled.TransitEnterexit,
     "Translate" to Icons.Filled.Translate,
     "TravelExplore" to Icons.Filled.TravelExplore,
-    "TrendingDown" to Icons.Filled.TrendingDown,
-    "TrendingFlat" to Icons.Filled.TrendingFlat,
-    "TrendingUp" to Icons.Filled.TrendingUp,
+    "TrendingDown" to Icons.AutoMirrored.Filled.TrendingDown,
+    "TrendingFlat" to Icons.AutoMirrored.Filled.TrendingFlat,
+    "TrendingUp" to Icons.AutoMirrored.Filled.TrendingUp,
     "TripOrigin" to Icons.Filled.TripOrigin,
     "Troubleshoot" to Icons.Filled.Troubleshoot,
     "Try" to Icons.Filled.Try,
@@ -3910,7 +4028,7 @@ val iconByName = mapOf(
     "TypeSpecimen" to Icons.Filled.TypeSpecimen,
     "Umbrella" to Icons.Filled.Umbrella,
     "Unarchive" to Icons.Filled.Unarchive,
-    "Undo" to Icons.Filled.Undo,
+    "Undo" to Icons.AutoMirrored.Filled.Undo,
     "UnfoldLessDouble" to Icons.Filled.UnfoldLessDouble,
     "UnfoldLess" to Icons.Filled.UnfoldLess,
     "UnfoldMoreDouble" to Icons.Filled.UnfoldMoreDouble,
@@ -3966,10 +4084,10 @@ val iconByName = mapOf(
     "ViewHeadline" to Icons.Filled.ViewHeadline,
     "ViewInAr" to Icons.Filled.ViewInAr,
     "ViewKanban" to Icons.Filled.ViewKanban,
-    "ViewList" to Icons.Filled.ViewList,
+    "ViewList" to Icons.AutoMirrored.Filled.ViewList,
     "ViewModule" to Icons.Filled.ViewModule,
-    "ViewQuilt" to Icons.Filled.ViewQuilt,
-    "ViewSidebar" to Icons.Filled.ViewSidebar,
+    "ViewQuilt" to Icons.AutoMirrored.Filled.ViewQuilt,
+    "ViewSidebar" to Icons.AutoMirrored.Filled.ViewSidebar,
     "ViewStream" to Icons.Filled.ViewStream,
     "ViewTimeline" to Icons.Filled.ViewTimeline,
     "ViewWeek" to Icons.Filled.ViewWeek,
@@ -3981,10 +4099,10 @@ val iconByName = mapOf(
     "Voicemail" to Icons.Filled.Voicemail,
     "VoiceOverOff" to Icons.Filled.VoiceOverOff,
     "Volcano" to Icons.Filled.Volcano,
-    "VolumeDown" to Icons.Filled.VolumeDown,
-    "VolumeMute" to Icons.Filled.VolumeMute,
-    "VolumeOff" to Icons.Filled.VolumeOff,
-    "VolumeUp" to Icons.Filled.VolumeUp,
+    "VolumeDown" to Icons.AutoMirrored.Filled.VolumeDown,
+    "VolumeMute" to Icons.AutoMirrored.Filled.VolumeMute,
+    "VolumeOff" to Icons.AutoMirrored.Filled.VolumeOff,
+    "VolumeUp" to Icons.AutoMirrored.Filled.VolumeUp,
     "VolunteerActivism" to Icons.Filled.VolunteerActivism,
     "VpnKey" to Icons.Filled.VpnKey,
     "VpnKeyOff" to Icons.Filled.VpnKeyOff,
@@ -4053,9 +4171,9 @@ val iconByName = mapOf(
     "WorkOutline" to Icons.Filled.WorkOutline,
     "WorkspacePremium" to Icons.Filled.WorkspacePremium,
     "Workspaces" to Icons.Filled.Workspaces,
-    "WrapText" to Icons.Filled.WrapText,
+    "WrapText" to Icons.AutoMirrored.Filled.WrapText,
     "WrongLocation" to Icons.Filled.WrongLocation,
-    "Wysiwyg" to Icons.Filled.Wysiwyg,
+    "Wysiwyg" to Icons.AutoMirrored.Filled.Wysiwyg,
     "Yard" to Icons.Filled.Yard,
     "YoutubeSearchedFor" to Icons.Filled.YoutubeSearchedFor,
     "ZoomIn" to Icons.Filled.ZoomIn,
