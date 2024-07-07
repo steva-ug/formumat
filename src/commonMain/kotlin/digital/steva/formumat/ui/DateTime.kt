@@ -38,6 +38,8 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import dev.icerock.moko.resources.compose.stringResource
+import digital.steva.formumat.public.MR
 import digital.steva.formumat.redux.ClearValue
 import digital.steva.formumat.redux.Dispatcher
 import digital.steva.formumat.redux.FormumatValues
@@ -151,12 +153,12 @@ fun DateWithPickerDialog(
                         onDatePicked(Instant.fromEpochMilliseconds(it).toLocalDateTime(TimeZone.currentSystemDefault()).date)
                     }
                 }) {
-                    Text("OK")
+                    Text(text = stringResource(MR.strings.action_ok))
                 }
             },
             dismissButton = {
                 TextButton(onClick = { showDialog.value = false }) {
-                    Text("Abbrechen")
+                    Text(text = stringResource(MR.strings.action_cancel))
                 }
             }
         ) {
@@ -210,7 +212,6 @@ fun TimeWithPickerDialog(
 
 @Composable
 fun TimePickerDialog(
-    title: String = "Uhrzeit wählen",
     onCancel: () -> Unit,
     onConfirm: () -> Unit,
     toggle: @Composable () -> Unit = {},
@@ -241,7 +242,7 @@ fun TimePickerDialog(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = 20.dp),
-                    text = title,
+                    text = stringResource(MR.strings.title_select_time),
                     style = MaterialTheme.typography.labelMedium
                 )
                 content()
@@ -254,10 +255,10 @@ fun TimePickerDialog(
                     Spacer(modifier = Modifier.weight(1f))
                     TextButton(
                         onClick = onCancel
-                    ) { Text("Abbrechen") }
+                    ) { Text(text = stringResource(MR.strings.action_cancel)) }
                     TextButton(
                         onClick = onConfirm
-                    ) { Text("OK") }
+                    ) { Text(text = stringResource(MR.strings.action_ok)) }
                 }
             }
         }

@@ -114,7 +114,7 @@ kotlin {
 }
 
 multiplatformResources {
-    resourcesPackage.set("digital.steva.formumat")
+    resourcesPackage.set("digital.steva.formumat.public")
 }
 
 android {

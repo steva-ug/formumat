@@ -9,6 +9,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import dev.icerock.moko.resources.compose.stringResource
+import digital.steva.formumat.public.MR
 import digital.steva.formumat.helpers.Convert
 import digital.steva.formumat.redux.ClearValue
 import digital.steva.formumat.redux.Dispatcher
@@ -53,7 +55,7 @@ fun IntegerView(
         isError = !isValid,
         supportingText = {
             if (!isValid) {
-                Text("Bitte geben sie eine Ganzzahl ein.")
+                Text(text = stringResource(MR.strings.error_no_integer_number))
             }
         },
         modifier = modifier.fillMaxWidth()
@@ -134,7 +136,7 @@ fun NumberView(
         isError = !isValid,
         supportingText = {
             if (!isValid) {
-                Text("Bitte geben sie eine Fließkommazahl ein.")
+                Text(text = stringResource(MR.strings.error_no_floating_point_number))
             }
         },
         modifier = modifier.fillMaxWidth()
