@@ -136,7 +136,7 @@ sealed class Stringish : Evaluatable {
 
     data class Expression(val value: String) : Stringish() {
         override fun eval(values: Map<String, Any>): String {
-            return value.replace(Regex("<%=\\s*(.+)\\s*%>")) {
+            return value.replace(Regex("<%=(.*?)%>")) {
                 try {
                     evaluator.evaluateString(it.groups[1]?.value ?: "", values)
                 } catch (e: Throwable) {
@@ -173,7 +173,7 @@ object StringishSearializer : KSerializer<Stringish> {
         val element = decoder.decodeSerializableValue(JsonElement.serializer())
         return when {
             element is JsonPrimitive && element.isString -> when {
-                element.content.contains(Regex("<%=\\s*(.+)\\s*%>")) -> Stringish.Expression(element.content)
+                element.content.contains(Regex("<%=(.*?)%>")) -> Stringish.Expression(element.content)
                 else -> Stringish.Literal(element.content)
             }
 
