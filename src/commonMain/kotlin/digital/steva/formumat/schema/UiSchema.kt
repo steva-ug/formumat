@@ -21,7 +21,19 @@ data class UiSchema(
     val description: String? = null,
     val items: List<Field> = emptyList(),
     @Transient val fieldsByKey: Map<String, Field> = emptyMap(),
-)
+) {
+    fun allPages(items: List<Field>): List<Page> {
+        return items.filterIsInstance<Page>().flatMap { listOf(it) + allPages(it.items) }
+    }
+
+    fun allPages(): List<Page> {
+        return allPages(items)
+    }
+
+    fun allVisiblePages(values: Map<String, Any>): List<Page> {
+        return allPages(items).filter { it.visible.eval(values) }
+    }
+}
 
 @Polymorphic
 interface Field {

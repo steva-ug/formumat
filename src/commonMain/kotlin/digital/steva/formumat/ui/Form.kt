@@ -76,6 +76,7 @@ fun FormView(
         selectedPage?.items ?: uiSchema.items,
         dataSchema.typesByKey,
         values,
+        showTitle = true,
         dispatch
     )
 }
@@ -175,6 +176,7 @@ fun PageView(
     fields: List<Field>,
     types: Map<String, Type>,
     values: FormumatValues,
+    showTitle: Boolean,
     dispatch: Dispatcher,
 ) {
     val listState = rememberLazyListState()
@@ -187,7 +189,9 @@ fun PageView(
     ) {
         val enabled = page?.enabled?.eval(values) ?: true
 
-        item { PageTitle(page?.title, values) }
+        if (showTitle) {
+            item { PageTitle(page?.title, values) }
+        }
 
         items(fields.filter { it !is Section }) {
             FieldView(
