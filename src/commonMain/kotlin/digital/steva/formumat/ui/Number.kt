@@ -3,11 +3,13 @@ package digital.steva.formumat.ui
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import dev.icerock.moko.resources.compose.stringResource
 import digital.steva.formumat.public.MR
@@ -49,6 +51,7 @@ fun IntegerView(
                     ?.let { value -> dispatch(SetValue(property, value, values.listContext)) }
             }
         },
+        keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
         label = { Text(label) },
         singleLine = true,
         enabled = fieldEnabled,
