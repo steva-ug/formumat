@@ -70,6 +70,29 @@ data class FormumatValues(
         return valOrListValue
     }
 
+    fun getWithoutDefault(key: String): Any? {
+        val value = when {
+            listContext != null -> {
+                (data[listContext.listProperty] as? List<Map<String, Any>>)?.get(listContext.listIndex)?.get(key)
+            }
+            else -> data[key]
+        }
+        val valOrListValue = if (value is List<*>) ListValue(value as List<Map<String, Any?>>, key) else value
+        if (valOrListValue == null) {
+            Logger.d { "Unable to find value with key \"${key}\"" }
+        }
+        return valOrListValue
+    }
+
+    fun getDefault(key: String): Any? {
+        return when {
+            listContext != null -> {
+                getType(key)?.default?.eval(this)
+            }
+            else -> types[key]?.default?.eval(this)
+        }
+    }
+
     override val keys: Set<String>
         get() = data.keys
 }
