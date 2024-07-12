@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
@@ -58,7 +59,7 @@ fun IntegerView(
                 text.toIntOrNull()?.let { value -> dispatch(SetValue(property, value, values.listContext)) }
             }
         },
-        visualTransformation = visualTransformToPlaceholderIfEmpty(valueString, defaultValueString),
+        visualTransformation = visualTransformToPlaceholderIfEmpty(valueString, defaultValueString, MaterialTheme.colorScheme.tertiary),
         keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
         label = { Text(label) },
         singleLine = true,
@@ -155,7 +156,7 @@ fun NumberView(
                 text.toDoubleOrNull()?.let { dispatch(SetValue(property, it, values.listContext)) }
             }
         },
-        visualTransformation = visualTransformToPlaceholderIfEmpty(valueString, defaultValueString),
+        visualTransformation = visualTransformToPlaceholderIfEmpty(valueString, defaultValueString, MaterialTheme.colorScheme.tertiary),
         keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Decimal),
         label = { Text(label) },
         singleLine = true,

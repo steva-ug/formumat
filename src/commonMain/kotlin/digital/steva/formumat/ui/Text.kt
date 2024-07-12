@@ -80,7 +80,7 @@ fun TextFieldView(
     OutlinedTextField(
         value = valueString,
         onValueChange = { dispatch(SetValue(textField.property?.eval(values) ?: "", it, values.listContext)) },
-        visualTransformation = visualTransformToPlaceholderIfEmpty(valueString, defaultValueString),
+        visualTransformation = visualTransformToPlaceholderIfEmpty(valueString, defaultValueString, MaterialTheme.colorScheme.tertiary),
         label = { Text(label) },
         singleLine = true,
         enabled = enabled,
@@ -104,7 +104,7 @@ fun TextAreaView(
     OutlinedTextField(
         value = valueString,
         onValueChange = { dispatch(SetValue(textField.property?.eval(values) ?: "", it, values.listContext)) },
-        visualTransformation = visualTransformToPlaceholderIfEmpty(valueString, defaultValueString),
+        visualTransformation = visualTransformToPlaceholderIfEmpty(valueString, defaultValueString, MaterialTheme.colorScheme.tertiary),
         label = { Text(label) },
         singleLine = false,
         minLines = 5,
