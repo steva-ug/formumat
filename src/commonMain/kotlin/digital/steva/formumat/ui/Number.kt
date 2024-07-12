@@ -41,8 +41,9 @@ fun IntegerView(
     val property = integerField.property?.eval(values) ?: ""
     val label = integerField.title.eval(values)
     val fieldEnabled = enabled && integerField.enabled.eval(values)
+    var onlyMinus by remember { mutableStateOf(false) }
     val defaultValue = values.getDefault(property)
-    val valueString = values.getWithoutDefault(property)?.toString() ?: ""
+    val valueString = if (onlyMinus) "-" else values.getWithoutDefault(property)?.toString() ?: ""
     val defaultValueString = defaultValue?.toString() ?: ""
 
     OutlinedTextField(
@@ -50,8 +51,11 @@ fun IntegerView(
         onValueChange = {
             if (it.isBlank()) {
                 dispatch(ClearValue(property, values.listContext))
+                onlyMinus = false
             } else {
-                it.toIntOrNull()?.let { value -> dispatch(SetValue(property, value, values.listContext)) }
+                val text = it
+                onlyMinus = text == "-"
+                text.toIntOrNull()?.let { value -> dispatch(SetValue(property, value, values.listContext)) }
             }
         },
         visualTransformation = visualTransformToPlaceholderIfEmpty(valueString, defaultValueString),
