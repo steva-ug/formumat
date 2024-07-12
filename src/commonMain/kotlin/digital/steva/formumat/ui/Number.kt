@@ -38,7 +38,6 @@ fun IntegerView(
     val label = integerField.title.eval(values)
     val fieldEnabled = enabled && integerField.enabled.eval(values)
     var text = Convert.toString(values[property])
-    var isValid = text.isBlank() || text.toIntOrNull() != null
 
     OutlinedTextField(
         value = text,
@@ -55,12 +54,6 @@ fun IntegerView(
         label = { Text(label) },
         singleLine = true,
         enabled = fieldEnabled,
-        isError = !isValid,
-        supportingText = {
-            if (!isValid) {
-                Text(text = stringResource(MR.strings.error_no_integer_number))
-            }
-        },
         modifier = modifier.fillMaxWidth()
     )
 }
