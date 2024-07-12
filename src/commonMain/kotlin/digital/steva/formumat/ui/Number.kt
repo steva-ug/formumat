@@ -115,6 +115,9 @@ fun NumberView(
     val label = numberField.title.eval(values)
     val fieldEnabled = enabled && numberField.enabled.eval(values)
     var text = Convert.toString(values[property])
+    val defaultValue = values.getDefault(property)
+    val valueString = values.getWithoutDefault(property)?.toString() ?: ""
+    val defaultValueString = defaultValue?.toString() ?: ""
 
     OutlinedTextField(
         value = text,
@@ -127,6 +130,7 @@ fun NumberView(
                     ?.let { value -> dispatch(SetValue(property, value, values.listContext)) }
             }
         },
+        visualTransformation = visualTransformToPlaceholderIfEmpty(valueString, defaultValueString),
         keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Decimal),
         label = { Text(label) },
         singleLine = true,
