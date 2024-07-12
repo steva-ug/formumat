@@ -1,6 +1,6 @@
 package digital.steva.formumat.ui
 
-import LocaleSymbols
+import LocaleSettings
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -126,7 +126,7 @@ fun NumberView(
         return value.toString().replace('.', decimalSeparator)
     }
 
-    val decimalSeparator = LocaleSymbols.ofLanguage(Locale.current.language).decimalSeparator
+    val decimalSeparator = LocaleSettings.ofLanguage(Locale.current.language).decimalSeparator
     val property = numberField.property?.eval(values) ?: ""
     val label = numberField.title.eval(values)
     val fieldEnabled = enabled && numberField.enabled.eval(values)

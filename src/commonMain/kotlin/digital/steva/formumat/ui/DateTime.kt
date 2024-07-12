@@ -1,5 +1,6 @@
 package digital.steva.formumat.ui
 
+import LocaleSettings
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -54,6 +55,8 @@ import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.LocalTime
 import kotlinx.datetime.TimeZone
+import kotlinx.datetime.format
+import kotlinx.datetime.format.byUnicodePattern
 import kotlinx.datetime.toLocalDateTime
 
 @Composable
@@ -173,7 +176,7 @@ fun DateWithPickerDialog(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = value?.toString() ?: "",
+                text = value?.format(LocalDate.Format { byUnicodePattern(LocaleSettings.ofCurrentLanguage().dateFormatShort) }) ?: "",
                 style = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier
                     .padding(PaddingValues(top = 14.dp, bottom = 14.dp, start = 14.dp, end = 0.dp))
@@ -217,7 +220,7 @@ fun TimeWithPickerDialog(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = value?.toString() ?: "",
+                text = value?.format(LocalTime.Format { byUnicodePattern(LocaleSettings.ofCurrentLanguage().timeFormatShort) }) ?: "",
                 style = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier
                     .padding(PaddingValues(top = 14.dp, bottom = 14.dp, start = 14.dp, end = 0.dp))
