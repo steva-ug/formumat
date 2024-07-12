@@ -6,6 +6,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextOverflow
 import digital.steva.formumat.redux.FormumatValues
 import digital.steva.formumat.redux.evaluator
 import digital.steva.formumat.schema.ButtonField
@@ -30,6 +31,10 @@ fun ButtonView(
                 color = if (enabled) MaterialTheme.colorScheme.onTertiary else Color.Gray
             )
         }
-        Text(buttonField.title.eval(values))
+        Text(
+            text = buttonField.title.eval(values),
+            overflow = TextOverflow.Ellipsis,
+            maxLines = 1
+        )
     }
 }

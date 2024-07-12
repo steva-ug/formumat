@@ -7,12 +7,12 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.Badge
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
@@ -306,7 +306,16 @@ fun RowView(
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         modifier = modifier
     ) {
-        rowField.items.forEach { FieldView(it, types, values, dispatch, it.enabled.eval(values)) }
+        rowField.items.forEach {
+            FieldView(
+                field = it,
+                types = types,
+                values = values,
+                dispatch = dispatch,
+                enabled = it.enabled.eval(values),
+                modifier = Modifier.wrapContentWidth().weight(1f, fill = false)
+            )
+        }
     }
 }
 
