@@ -21,6 +21,7 @@ import digital.steva.formumat.schema.LabelField
 import digital.steva.formumat.schema.LabelStyle
 import digital.steva.formumat.schema.StringType
 import digital.steva.formumat.schema.TextField
+import visualTransformToPlaceholderIfEmpty
 
 @Suppress("UNUSED_PARAMETER")
 @Composable
@@ -51,14 +52,16 @@ fun TextView(
     enabled: Boolean = true,
     modifier: Modifier = Modifier
 ) {
-    val value = (values[textField.property?.eval(values)] ?: "").toString()
+    val property = textField.property?.eval(values) ?: ""
+    val valueString = values.getWithoutDefault(property)?.toString() ?: ""
+    val defaultValueString = values.getDefault(property)?.toString() ?: ""
     val label = textField.title.eval(values)
     val fieldEnabled = enabled && textField.enabled.eval(values)
     val required = textField.isRequired(stringType, values)
     if (textField.multiline) {
-        TextAreaView(textField, values, value, label, fieldEnabled, required, dispatch, modifier)
+        TextAreaView(textField, values, valueString, defaultValueString, label, fieldEnabled, required, dispatch, modifier)
     } else {
-        TextFieldView(textField, values, value, label, fieldEnabled, required, dispatch, modifier)
+        TextFieldView(textField, values, valueString, defaultValueString, label, fieldEnabled, required, dispatch, modifier)
     }
 }
 
@@ -66,7 +69,8 @@ fun TextView(
 fun TextFieldView(
     textField: TextField,
     values: FormumatValues,
-    value: String,
+    valueString: String,
+    defaultValueString: String,
     label: String,
     enabled: Boolean,
     required: Boolean,
@@ -74,12 +78,13 @@ fun TextFieldView(
     modifier: Modifier
 ) {
     OutlinedTextField(
-        value = value,
+        value = valueString,
         onValueChange = { dispatch(SetValue(textField.property?.eval(values) ?: "", it, values.listContext)) },
+        visualTransformation = visualTransformToPlaceholderIfEmpty(valueString, defaultValueString),
         label = { Text(label) },
         singleLine = true,
         enabled = enabled,
-        trailingIcon = { RequiredIcon(required, value, enabled) },
+        trailingIcon = { RequiredIcon(required, valueString, enabled) },
         modifier = modifier.fillMaxWidth()
     )
 }
@@ -88,7 +93,8 @@ fun TextFieldView(
 fun TextAreaView(
     textField: TextField,
     values: FormumatValues,
-    value: String,
+    valueString: String,
+    defaultValueString: String,
     label: String,
     enabled: Boolean,
     required: Boolean,
@@ -96,14 +102,15 @@ fun TextAreaView(
     modifier: Modifier
 ) {
     OutlinedTextField(
-        value = value,
+        value = valueString,
         onValueChange = { dispatch(SetValue(textField.property?.eval(values) ?: "", it, values.listContext)) },
+        visualTransformation = visualTransformToPlaceholderIfEmpty(valueString, defaultValueString),
         label = { Text(label) },
         singleLine = false,
         minLines = 5,
         maxLines = Int.MAX_VALUE,
         enabled = enabled,
-        trailingIcon = { RequiredIcon(required, value, enabled) },
+        trailingIcon = { RequiredIcon(required, valueString, enabled) },
         modifier = modifier.fillMaxWidth()
     )
 }
