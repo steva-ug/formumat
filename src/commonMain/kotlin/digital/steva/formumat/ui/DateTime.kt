@@ -14,6 +14,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccessTime
+import androidx.compose.material.icons.filled.CalendarToday
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material3.DatePicker
 import androidx.compose.material3.DatePickerDialog
@@ -124,7 +126,7 @@ fun DateTimeView(
                         .drawBehind {
                             drawCircle(
                                 color = if (enabled) Color(0xFFF06292) else Color(0xFFFFEBEE),
-                                radius = 20f,
+                                radius = 30f,
                                 style = Stroke(width = 2.dp.toPx())
                             )
                         }
@@ -167,14 +169,26 @@ fun DateWithPickerDialog(
     }
 
     OutlinedCard {
-        Text(
-            text = value?.toString() ?: "",
-            style = MaterialTheme.typography.bodyLarge,
-            modifier = Modifier
-                .padding(PaddingValues(8.dp))
-                .clickable { showDialog.value = true }
-                .widthIn(min = 100.dp)
-        )
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = value?.toString() ?: "",
+                style = MaterialTheme.typography.bodyLarge,
+                modifier = Modifier
+                    .padding(PaddingValues(top = 14.dp, bottom = 14.dp, start = 14.dp, end = 0.dp))
+                    .clickable { showDialog.value = true }
+                    .widthIn(min = 100.dp)
+            )
+            Icon(
+                Icons.Filled.CalendarToday,
+                tint = MaterialTheme.colorScheme.onSurface,
+                contentDescription = "",
+                modifier = Modifier
+                    .clickable { showDialog.value = true }
+                    .padding(end = 14.dp)
+            )
+        }
     }
 }
 
@@ -199,14 +213,26 @@ fun TimeWithPickerDialog(
     }
 
     OutlinedCard {
-        Text(
-            text = value?.toString() ?: "",
-            style = MaterialTheme.typography.bodyLarge,
-            modifier = Modifier
-                .padding(PaddingValues(8.dp))
-                .clickable { showDialog.value = true }
-                .widthIn(min = 50.dp)
-        )
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = value?.toString() ?: "",
+                style = MaterialTheme.typography.bodyLarge,
+                modifier = Modifier
+                    .padding(PaddingValues(top = 14.dp, bottom = 14.dp, start = 14.dp, end = 0.dp))
+                    .clickable { showDialog.value = true }
+                    .widthIn(min = 50.dp)
+            )
+            Icon(
+                Icons.Filled.AccessTime,
+                tint = MaterialTheme.colorScheme.onSurface,
+                contentDescription = "",
+                modifier = Modifier
+                    .padding(end = 14.dp)
+                    .clickable { showDialog.value = true }
+            )
+        }
     }
 }
 
