@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resources>
     <string name="action_ok">OK</string>
-    <string name="action_cancel">Abbrechen</string>
-    <string name="title_select_time">Uhrzeit wählen</string>
-    <string name="error_no_floating_point_number">Bitte geben sie eine Fließkommazahl ein.</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="title_select_time">Select time</string>
+    <string name="error_no_floating_point_number">Please enter a floating point number.</string>
 </resources>
