@@ -115,7 +115,6 @@ fun NumberView(
     val label = numberField.title.eval(values)
     val fieldEnabled = enabled && numberField.enabled.eval(values)
     var text = Convert.toString(values[property])
-    var isValid = text.isBlank() || text.toDoubleOrNull() != null
 
     OutlinedTextField(
         value = text,
@@ -131,12 +130,6 @@ fun NumberView(
         label = { Text(label) },
         singleLine = true,
         enabled = fieldEnabled,
-        isError = !isValid,
-        supportingText = {
-            if (!isValid) {
-                Text(text = stringResource(MR.strings.error_no_floating_point_number))
-            }
-        },
         modifier = modifier.fillMaxWidth()
     )
 }
