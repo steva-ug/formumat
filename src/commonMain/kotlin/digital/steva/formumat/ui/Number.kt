@@ -127,6 +127,7 @@ fun NumberView(
                     ?.let { value -> dispatch(SetValue(property, value, values.listContext)) }
             }
         },
+        keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Decimal),
         label = { Text(label) },
         singleLine = true,
         enabled = fieldEnabled,
