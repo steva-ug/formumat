@@ -1,5 +1,6 @@
 package digital.steva.formumat.redux
 
+import androidx.compose.ui.text.intl.Locale
 import co.touchlab.kermit.Logger
 import com.github.murzagalin.evaluator.DefaultFunctions
 import com.github.murzagalin.evaluator.Evaluator
@@ -11,13 +12,22 @@ import digital.steva.formumat.schema.Type
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.builtins.MapEntrySerializer
 import kotlinx.serialization.builtins.serializer
 import kotlinx.serialization.descriptors.PrimitiveKind
 import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
 import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
-import kotlinx.serialization.json.*
+import kotlinx.serialization.json.JsonElement
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.boolean
+import kotlinx.serialization.json.booleanOrNull
+import kotlinx.serialization.json.double
+import kotlinx.serialization.json.doubleOrNull
+import kotlinx.serialization.json.int
+import kotlinx.serialization.json.intOrNull
 
 val evaluator by lazy {
     Evaluator(
@@ -75,6 +85,7 @@ data class FormumatValues(
             listContext != null -> {
                 (data[listContext.listProperty] as? List<Map<String, Any>>)?.get(listContext.listIndex)?.get(key)
             }
+
             else -> data[key]
         }
         val valOrListValue = if (value is List<*>) ListValue(value as List<Map<String, Any?>>, key) else value
@@ -89,6 +100,7 @@ data class FormumatValues(
             listContext != null -> {
                 getType(key)?.default?.eval(this)
             }
+
             else -> types[key]?.default?.eval(this)
         }
     }
@@ -147,6 +159,12 @@ object BoolishSearializer : KSerializer<Boolish> {
     }
 }
 
+data class StringishTranslations(val translations: Map<String, Stringish>) : Map<String, Stringish> by translations {
+    fun getTranslation(): Stringish {
+        return translations.get(Locale.current.language) ?: translations.get("_") ?: Stringish.Literal("")
+    }
+}
+
 @Serializable(with = StringishSearializer::class)
 sealed class Stringish : Evaluatable {
     override fun eval(values: Map<String, Any>) = ""
@@ -171,6 +189,12 @@ sealed class Stringish : Evaluatable {
 
         override fun toString() = value
     }
+
+    data class Translations(val value: StringishTranslations) : Stringish() {
+        override fun eval(values: Map<String, Any>) = value.getTranslation().eval(values)
+
+        override fun toString() = value.getTranslation().toString()
+    }
 }
 
 object StringishSearializer : KSerializer<Stringish> {
@@ -189,11 +213,33 @@ object StringishSearializer : KSerializer<Stringish> {
                 String.serializer(),
                 value.value
             )
+
+            is Stringish.Translations -> {
+                val composite = encoder.beginStructure(descriptor)
+                value.value.translations.onEachIndexed { index, translation ->
+                    composite.encodeSerializableElement(
+                        descriptor, index,
+                        MapEntrySerializer(String.serializer(), StringishSearializer),
+                        translation
+                    )
+                }
+                composite.endStructure(descriptor)
+            }
         }
     }
 
     override fun deserialize(decoder: Decoder): Stringish {
         val element = decoder.decodeSerializableValue(JsonElement.serializer())
+        return when {
+            element is JsonObject -> {
+                Stringish.Translations(StringishTranslations(element.mapValues { deserializePrimitiveStringish(it.value) }))
+            }
+
+            else -> deserializePrimitiveStringish(element)
+        }
+    }
+
+    private fun deserializePrimitiveStringish(element: Any): Stringish {
         return when {
             element is JsonPrimitive && element.isString -> when {
                 element.content.contains(Regex("<%=(.*?)%>")) -> Stringish.Expression(element.content)
