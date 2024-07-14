@@ -50,6 +50,7 @@ import digital.steva.formumat.redux.SetValue
 import digital.steva.formumat.schema.DateTimeField
 import digital.steva.formumat.schema.StringFormat
 import digital.steva.formumat.schema.StringType
+import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
@@ -99,7 +100,10 @@ fun DateTimeView(
                     value = date
                 ) {
                     val newValue = when (type.format) {
-                        StringFormat.DATE_TIME -> LocalDateTime(it, time ?: LocalTime(0, 0, 0)).toString()
+                        StringFormat.DATE_TIME -> LocalDateTime(
+                            it, time ?: Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault()).time
+                        ).toString()
+
                         StringFormat.DATE -> it.toString()
                         else -> null
                     }
@@ -111,7 +115,10 @@ fun DateTimeView(
                     value = time
                 ) {
                     val newValue = when (type.format) {
-                        StringFormat.DATE_TIME -> LocalDateTime(date ?: LocalDate.fromEpochDays(0), it).toString()
+                        StringFormat.DATE_TIME -> LocalDateTime(
+                            date ?: Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault()).date, it
+                        ).toString()
+
                         StringFormat.TIME -> it.toString()
                         else -> null
                     }
