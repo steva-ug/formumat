@@ -161,7 +161,7 @@ object BoolishSearializer : KSerializer<Boolish> {
 
 data class StringishTranslations(val translations: Map<String, Stringish>) : Map<String, Stringish> by translations {
     fun getTranslation(): Stringish {
-        return translations.get(Locale.current.language) ?: translations.get("_") ?: Stringish.Literal("")
+        return translations.get(Locale.current.language) ?: translations.get("__") ?:  translations.get("_") ?: Stringish.Literal("")
     }
 }
 
