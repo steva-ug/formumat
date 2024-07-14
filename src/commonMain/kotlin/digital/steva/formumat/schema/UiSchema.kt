@@ -149,7 +149,7 @@ abstract class OptionsField(
     @Transient override val enabled: Boolish = Boolish.Literal(true),
     @Transient override val required: Boolish = Boolish.Literal(true),
     @Transient override val clearable: Boolish = Boolish.Literal(true),
-    @Transient open val enumLabels: Map<String, String> = emptyMap(),
+    @Transient open val enumLabels: Map<String, Stringish> = emptyMap(),
 ) : Field
 
 @Serializable
@@ -162,7 +162,7 @@ data class RadiosField(
     override val enabled: Boolish = Boolish.Literal(true),
     override val required: Boolish = Boolish.Literal(false),
     override val clearable: Boolish = Boolish.Literal(true),
-    override val enumLabels: Map<String, String> = emptyMap(),
+    override val enumLabels: Map<String, Stringish> = emptyMap(),
 ) : OptionsField(title, property, name, visible, enabled, required, clearable, enumLabels)
 
 @Serializable
@@ -175,7 +175,7 @@ data class DropdownField(
     override val enabled: Boolish = Boolish.Literal(true),
     override val required: Boolish = Boolish.Literal(false),
     override val clearable: Boolish = Boolish.Literal(true),
-    override val enumLabels: Map<String, String> = emptyMap(),
+    override val enumLabels: Map<String, Stringish> = emptyMap(),
     val emptyOption: Boolish = Boolish.Literal(true),
 ) : OptionsField(title, property, name, visible, enabled, required, clearable, enumLabels)
 

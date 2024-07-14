@@ -163,7 +163,7 @@ fun RadiosView(
                     modifier = Modifier.size(36.dp)
                 )
                 Text(
-                    text = optionLabels.get(option.toString()) ?: option.toString()
+                    text = optionLabels.get(option.toString())?.eval(values) ?: option.toString()
                 )
             }
         }
@@ -205,7 +205,7 @@ fun DropdownView(
         }
         ExposedDropdownMenuBox(expanded = expanded, onExpandedChange = { expanded = !expanded }) {
             TextField(
-                value = Convert.toString(value).let { optionLabels[it] ?: it },
+                value = Convert.toString(value).let { optionLabels[it]?.eval(values) ?: it },
                 onValueChange = {},
                 readOnly = true,
                 trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
@@ -226,7 +226,7 @@ fun DropdownView(
                 }
                 options?.forEach { option ->
                     DropdownMenuItem(
-                        text = { Text(Convert.toString(option).let { optionLabels[it] ?: it }) },
+                        text = { Text(Convert.toString(option).let { optionLabels[it]?.eval(values) ?: it }) },
                         onClick = {
                             dispatch(
                                 SetValue(
