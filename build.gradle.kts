@@ -17,7 +17,7 @@ plugins {
 }
 
 group = "digital.steva"
-version = "0.0.1"
+version = File("$rootDir/version").readText().trim()
 
 repositories {
     google()
